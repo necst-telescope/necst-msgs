@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  job:
+    name: Test
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:jammy
+    env:
+      PACKAGE_NAME: necst_msgs
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Set-up environment
+        uses: ros-tooling/setup-ros@v0.3
+      - name: Build interface files
+        uses: ros-tooling/action-ros-ci@v0.2
+        with:
+          package-name: ${{ env.PACKAGE_NAME }}
+          target-ros2-distro: humble
+          skip-tests: true
