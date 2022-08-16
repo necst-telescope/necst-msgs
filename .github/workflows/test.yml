@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  job:
+    name: Test
+    runs-on: ubuntu-latest
+    container:
+      image: ros:humble-ros-base
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Set-up environment
+        run: source /opt/ros/humble/setup.bash
+      - name: Build interface files
+        runs: echo $(ls -la)
