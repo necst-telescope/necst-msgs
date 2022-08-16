@@ -20,7 +20,7 @@ jobs:
       - name: Build interface files
         run: |
           echo $(ls)
-        echo $(ls ros2_ws/src) && :
+          echo $(ls ros2_ws/src) && :
           echo $(pwd)
           echo $(which ros2)
           echo $(which colcon)
