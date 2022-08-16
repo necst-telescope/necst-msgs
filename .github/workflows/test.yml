@@ -11,19 +11,16 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:jammy
+      image: ros:humble-ros-base
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
           path: ros2_ws/src/main
-      - name: Set-up environment
-        uses: ros-tooling/setup-ros@v0.3
-        with:
-          required-ros-distribution: humble
       - name: Build interface files
         run: |
-          echo $(ls ../../)
+          echo $(ls)
+        echo $(ls ros2_ws/src) && :
           echo $(pwd)
           echo $(which ros2)
           echo $(which colcon)
