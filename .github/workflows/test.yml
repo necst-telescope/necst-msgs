@@ -15,10 +15,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
-          #- name: Set-up environment
-          #  run: source /opt/ros/humble/setup.bash
       - name: Build interface files
         run: |
           echo $(ls -la)
-          echo $(which ros2)
+          echo $(pwd)
           echo $(which colcon)
