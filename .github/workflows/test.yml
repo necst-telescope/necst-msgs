@@ -23,10 +23,7 @@ jobs:
       - name: Set-up environment
         run: |
           cd ${{ env.ROS2_WS }}
-          echo $(ls /)
-          echo $(ls /opt)
-          echo $(ls /opt/ros)
-          source /opt/ros/humble/setup.bash
+          . /opt/ros/humble/setup.bash
       - name: Build interface files
         run: |
           colcon build --packages-select ${{ env.PACKAGE_NAME }}
