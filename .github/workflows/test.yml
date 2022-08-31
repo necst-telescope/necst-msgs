@@ -10,11 +10,11 @@ jobs:
   compile:
     name: CheckCompilable
     runs-on: ubuntu-latest
+    container:
+      image: ros:humble-ros-base
     env:
       PACKAGE_NAME: necst_msgs
       ROS_DISTRO: humble
-    container:
-      image: ros:${{ env.ROS_DISTRO }}-ros-base
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
