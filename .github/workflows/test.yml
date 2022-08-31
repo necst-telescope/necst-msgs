@@ -11,17 +11,28 @@ jobs:
     name: CheckCompilable
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:jammy
+      image: ros:humble-ros-base
     env:
       PACKAGE_NAME: necst_msgs
+      ROS_DISTRO: humble
+      PACKAGE_PATH: ros2_ws/src/${{ github.event.repository.name }}
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
-      - name: Set-up environment
-        uses: ros-tooling/setup-ros@v0.3
-      - name: Build interface files
-        uses: ros-tooling/action-ros-ci@v0.2
         with:
-          package-name: ${{ env.PACKAGE_NAME }}
-          target-ros2-distro: humble
-          skip-tests: true
+          path: ${{ env.PACKAGE_PATH }}
+      - name: Build ROS package
+        run: |
+          . /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
+          ( cd ros2_ws && colcon build --symlink-install )
+      - name: Check if all interface definitions have been built
+        working-directory: ${{ env.PACKAGE_PATH }}
+        run: |
+          . /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
+          [ -d ./msg ] || echo "'msg' directory not found"
+          [ -d ./srv ] || echo "'srv' directory not found"
+          for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] || ( echo "'$__msg' haven't been built" && false ); done
+          for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__msg%.*}) ] || ( echo "'$__srv' haven't been built" && false ); done
