@@ -20,6 +20,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Set-up environment
         uses: ros-tooling/setup-ros@v0.3
+        with:
+          required-ros-distribution: ${{ env.ROS_DISTRO }}
       - name: Build interface files
         uses: ros-tooling/action-ros-ci@v0.2
         with:
