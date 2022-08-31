@@ -21,12 +21,13 @@ jobs:
       - name: Set-up environment
         uses: ros-tooling/setup-ros@v0.3
         with:
-          required-ros-distribution: ${{ env.ROS_DISTRO }}
+          required-ros-distributions: ${{ env.ROS_DISTRO }}
       - name: Build interface files
         uses: ros-tooling/action-ros-ci@v0.2
         with:
           package-name: ${{ env.PACKAGE_NAME }}
           target-ros2-distro: ${{ env.ROS_DISTRO }}
           skip-tests: true
-      - name: Debug with tmate on failure
+      - name: Debug with tmate
         uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 30
