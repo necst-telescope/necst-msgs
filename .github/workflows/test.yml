@@ -15,6 +15,7 @@ jobs:
     env:
       PACKAGE_NAME: necst_msgs
       ROS_DISTRO: humble
+      PACKAGE_PATH: ros2_ws/src/$(basename ${{ github.repository }})
     defaults:
       run:
         shell: bash
@@ -22,15 +23,17 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
-          path: ros2_ws/src/${GITHUB_REPOSITORY}
+          path: ${{ env.PACKAGE_PATH }}
       - name: Build ROS package
         run: |
           . /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
           ( cd ros2_ws && colcon build --symlink-install )
       - name: Check if all interface definitions have been built
-        working-directory: ros2_ws/src/$(basename ${GITHUB_REPOSITORY})
+        working-directory: ${{ env.PACKAGE_PATH }}
         run: |
           . /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
+          [ -d ./msg ] || echo "'msg' directory not found"
+          [ -d ./srv ] || echo "'srv' directory not found"
           for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] || echo "'$__msg' isn't built" && exit 1; done
           for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__msg%.*}) ] && echo "'$__srv' isn't built" && exit 1; done
       - name: Debug with tmate
