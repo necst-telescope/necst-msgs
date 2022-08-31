@@ -15,15 +15,21 @@ jobs:
     env:
       PACKAGE_NAME: necst_msgs
       ROS_DISTRO: humble
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
-          path: ros2_ws/src/
+          path: ros2_ws/src/${{ github.repository }}
       - name: Set-up ROS environment
-        shell: bash
-        run : |
+        run: |
           . /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
+      - name: Build ROS package
+        run: |
+          ( cd ros2_ws && colcon build --symlink-install )
       - name: Debug with tmate
+        if: ${{ always() }}
         uses: mxschmitt/action-tmate@v3
         timeout-minutes: 30
