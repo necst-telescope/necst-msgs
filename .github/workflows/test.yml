@@ -34,8 +34,8 @@ jobs:
           . /opt/ros/${{ env.ROS_DISTRO }}/setup.bash
           [ -d ./msg ] || echo "'msg' directory not found"
           [ -d ./srv ] || echo "'srv' directory not found"
-          for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] || echo "'$__msg' isn't built" && exit 1; done
-          for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__msg%.*}) ] && echo "'$__srv' isn't built" && exit 1; done
+          for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] || echo "'$__msg' isn't built" && false; done
+          for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__msg%.*}) ] && echo "'$__srv' isn't built" && false; done
       - name: Debug with tmate
         if: ${{ always() }}
         uses: mxschmitt/action-tmate@v3
