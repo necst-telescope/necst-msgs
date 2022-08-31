@@ -10,24 +10,14 @@ jobs:
   compile:
     name: CheckCompilable
     runs-on: ubuntu-latest
-    container:
-      image: ubuntu:jammy
     env:
       PACKAGE_NAME: necst_msgs
       ROS_DISTRO: humble
+    container:
+      image: ros:${{ env.ROS_DISTRO }}-ros-base
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
-      - name: Set-up environment
-        uses: ros-tooling/setup-ros@v0.3
-        with:
-          required-ros-distributions: ${{ env.ROS_DISTRO }}
-      - name: Build interface files
-        uses: ros-tooling/action-ros-ci@v0.2
-        with:
-          package-name: ${{ env.PACKAGE_NAME }}
-          target-ros2-distro: ${{ env.ROS_DISTRO }}
-          skip-tests: true
       - name: Debug with tmate
         uses: mxschmitt/action-tmate@v3
         timeout-minutes: 30
