@@ -1,4 +1,4 @@
 string requester
 bool remove
 ---
-bool approval
+bool privilege
