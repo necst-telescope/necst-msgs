@@ -15,7 +15,7 @@ jobs:
     env:
       PACKAGE_NAME: necst_msgs
       ROS_DISTRO: humble
-      PACKAGE_PATH: ros2_ws/src/$(basename ${{ github.repository }})
+      PACKAGE_PATH: ros2_ws/src/${{ github.repository##*/ }}
     defaults:
       run:
         shell: bash
