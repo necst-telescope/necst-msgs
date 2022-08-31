@@ -27,5 +27,6 @@ jobs:
           skip-tests: true
       - name: Check all interfaces are built
         run: |
+          source /opt/ros/$ROS_DISTRO/setup.bash
           for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] || echo "'$__msg' isn't built" && exit 1; done
           for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__srv%.*}) ] && echo "'$__srv' isn't built" && exit 1; done
