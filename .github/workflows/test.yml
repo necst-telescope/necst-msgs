@@ -26,5 +26,5 @@ jobs:
           package-name: ${{ env.PACKAGE_NAME }}
           target-ros2-distro: ${{ env.ROS_DISTRO }}
           skip-tests: true
-      - name: debug
-        uses: csexton/debugger-action@master
+      - name: Debug with tmate on failure
+        uses: mxschmitt/action-tmate@v3
