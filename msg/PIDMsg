@@ -1,9 +1,9 @@
-float64 lon
-float64 lat
-string unit
-string frame
-float64 time
-string name
+int = int64
+float = float128
+uint = uint64
+str = unicode
+bool = bool
+object = object
 
 >>> msg = necst_msgs.msg.PIDMsg
 >>> msg.get_fields_and_field_types().keys()
