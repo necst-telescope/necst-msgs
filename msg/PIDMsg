@@ -1,10 +1,3 @@
-int = int64
-float = float128
-uint = uint64
-str = unicode
-bool = bool
-object = object
-
->>> msg = necst_msgs.msg.PIDMsg
->>> msg.get_fields_and_field_types().keys()
-["k_p", "k_i", "k_d"]
+float64 k_p
+float64 k_i
+float64 k_d
