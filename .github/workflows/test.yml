@@ -35,9 +35,7 @@ jobs:
           . ../../install/setup.bash
           [ -d ./msg ] || echo "'msg' directory not found"
           [ -d ./srv ] || echo "'srv' directory not found"
-          for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] && ( echo "'$__msg' haven't been built" && false ); done
-          for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__srv%.*}) ] && ( echo "'$__srv' haven't been built" && false ); done
-      - name: debug
-        if: ${{ always() }}
-        uses: mxschmitt/action-tmate@v3
-        timeout-minutes: 30
+          ret=0
+          for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] && echo "'$__msg' haven't been built" && ret=1; done
+          for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__srv%.*}) ] && echo "'$__srv' haven't been built" && ret=1; done
+          [ $ret -eq 0 ]
