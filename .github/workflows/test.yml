@@ -36,3 +36,7 @@ jobs:
           [ -d ./srv ] || echo "'srv' directory not found"
           for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] && ( echo "'$__msg' haven't been built" && false ); done
           for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__srv%.*}) ] && ( echo "'$__srv' haven't been built" && false ); done
+      - name: debug
+        if: ${{ always() }}
+        uses: mxschmitt/action-tmate@v3
+        timeout-minutes: 30
