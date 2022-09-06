@@ -11,6 +11,7 @@ find_package(rosidl_default_generators REQUIRED)
 set(msg_files
   "msg/CoordMsg.msg"
   "msg/PIDMsg.msg"
+  "msg/TimedFloat.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
