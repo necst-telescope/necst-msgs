@@ -1,0 +1,11 @@
+source;share/necst_msgs/hook/cmake_prefix_path.ps1
+source;share/necst_msgs/hook/cmake_prefix_path.dsv
+source;share/necst_msgs/hook/cmake_prefix_path.sh
+source;share/necst_msgs/hook/ld_library_path_lib.ps1
+source;share/necst_msgs/hook/ld_library_path_lib.dsv
+source;share/necst_msgs/hook/ld_library_path_lib.sh
+source;share/necst_msgs/local_setup.bash
+source;share/necst_msgs/local_setup.dsv
+source;share/necst_msgs/local_setup.ps1
+source;share/necst_msgs/local_setup.sh
+source;share/necst_msgs/local_setup.zsh
