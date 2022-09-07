@@ -38,4 +38,5 @@ jobs:
           ret=0
           for __msg in $(ls ./msg); do [ -z $(ros2 interface list | grep necst_msgs/msg/${__msg%.*}) ] && echo "'$__msg' haven't been built" && ret=1; done
           for __srv in $(ls ./srv); do [ -z $(ros2 interface list | grep necst_msgs/srv/${__srv%.*}) ] && echo "'$__srv' haven't been built" && ret=1; done
+          [ $ret -eq 1 ] && echo "Make sure the files are listed in CMakeLists.txt"
           [ $ret -eq 0 ]
