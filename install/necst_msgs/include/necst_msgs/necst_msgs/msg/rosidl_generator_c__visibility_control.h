@@ -1,1 +1,0 @@
-/home/user/ros2_ws/src/necst-msgs/build/necst_msgs/rosidl_generator_c/necst_msgs/msg/rosidl_generator_c__visibility_control.h
