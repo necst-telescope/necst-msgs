@@ -1,1 +1,0 @@
-/home/user/ros2_ws/src/necst-msgs/build/necst_msgs/rosidl_cmake/srv/AuthoritySrv_Request.msg
