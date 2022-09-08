@@ -1,1 +1,0 @@
-/home/user/ros2_ws/src/necst-msgs/build/necst_msgs/rosidl_generator_c/necst_msgs/srv/detail/authority_srv__struct.h
