@@ -1,1 +1,0 @@
-/home/user/ros2_ws/src/necst-msgs/build/necst_msgs/ament_cmake_core/necst_msgsConfig-version.cmake
