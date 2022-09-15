@@ -9,6 +9,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
+  "msg/AlertMsg.msg"
   "msg/CoordMsg.msg"
   "msg/PIDMsg.msg"
   "msg/TimedAzElFloat64.msg"
