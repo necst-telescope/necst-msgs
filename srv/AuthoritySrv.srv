@@ -1,4 +1,6 @@
-string requester
-bool remove
+# Data type for authority management.
+
+string requester  # Identifier of node requesting for privilege.
+bool remove       # If ``true``, this request is for privilege removal, not for acquisition.
 ---
-bool privilege
+bool privilege    # If ``true``, the requester node is considered to be privileged.
