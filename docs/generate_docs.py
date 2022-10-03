@@ -6,7 +6,7 @@ import shutil
 from pathlib import Path
 from typing import Dict, Sequence
 
-# import markdown
+import markdown
 
 pkg_name = "necst_msgs"
 
@@ -21,6 +21,22 @@ public_root = Path(__file__).parent / "public"
 
 def_matcher = re.compile(r"^([\w\[\]]+)\s*([\w_]+)\s*#?(.*)$")
 comment_matcher = re.compile(r"^\s*(?![\w]).*")
+
+style = """<style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+
+code {
+    color: #A1F;
+}
+</style>
+"""
 
 def generate(source: Path) -> str:
     relative_path = source.relative_to(proj_root).with_suffix("")
@@ -47,7 +63,9 @@ def generate(source: Path) -> str:
     _post_notes = [line.strip("#").strip() for line in reversed(list(_post_notes))]
     post_notes = [] if len(_post_notes) == 0 else ["## Notes", ""] + _post_notes
 
-    return "\n".join([*title, *description, *defs, *post_notes])
+    raw_code = ["## Raw definition", "", "```plaintext", *raw, "```", ""]
+
+    return "\n".join([*title, *description, *defs, *post_notes, *raw_code])
 
 def generate_index(doc_path: Dict[str, Sequence[Path]]) -> str:
     title = [f"# {pkg_name}", ""]
@@ -55,12 +73,20 @@ def generate_index(doc_path: Dict[str, Sequence[Path]]) -> str:
     for section, paths in doc_path.items():
         section_title = f"## {section}"
         relative_paths = [path.relative_to(public_root) for path in paths]
-        section_content = [f"- [{path.stem}]({path.name})" for path in relative_paths]
+        section_content = [f"- [{path.stem}]({path})" for path in relative_paths]
         sections.extend([section_title, "", *section_content, ""])
     return "\n".join([*title, *sections])
 
+def attach_style(md_content: str) -> str:
+    return style + md_content
+
 def write(src_path: Path, content: str) -> Path:
     doc_path = public_root / src_path.relative_to(proj_root).with_suffix(".html")
+    doc_path.parent.mkdir(parents=True, exist_ok=True)
+    doc_path.touch(exist_ok=True)
+    md_content = markdown.markdown(content, extensions=["tables", "fenced_code"])
+    doc_path.write_text(md_content)
+    return doc_path
 
 
 if __name__ == "__main__":
@@ -72,8 +98,9 @@ if __name__ == "__main__":
     for section, root in section_roots.items():
         files = list(root.glob("*"))
         generated = [generate(p) for p in files]
-        generated_path[section] = [write(p, c) for p, c in zip(files, generated)]
-    # index = generate_index(generated_path)
-    # write(proj_root / "index.md", index)
+        styled = [attach_style(g) for g in generated]
+        generated_path[section] = [write(p, c) for p, c in zip(files, styled)]
+    index = generate_index(generated_path)
+    p = write(proj_root / "index.md", index)
 
 
