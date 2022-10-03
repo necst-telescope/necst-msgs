@@ -4,3 +4,10 @@ string requester  # Identifier of node requesting for privilege.
 bool remove       # If ``true``, this request is for privilege removal, not for acquisition.
 ---
 bool privilege    # If ``true``, the requester node is considered to be privileged.
+
+# ## Example
+# ```python
+# >>> from necst_msgs.srv import AuthoritySrv
+# >>> request = AuthoritySrv.Request(requester="test_node-123", remove=True)
+# >>> response = AuthoritySrv.Response(privilege=False)
+# ```
