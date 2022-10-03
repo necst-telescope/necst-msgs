@@ -42,7 +42,7 @@ code {
 
 def generate(source: Path) -> str:
     relative_path = source.relative_to(proj_root).with_suffix("")
-    _title = f"# {pkg_name}/{relative_path}".replace("/", ".")
+    _title = f"# `{pkg_name}/{relative_path}`".replace("/", ".")
     title = [_title, ""]
 
     raw = source.read_text().splitlines()
