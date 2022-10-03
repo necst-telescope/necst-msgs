@@ -53,9 +53,10 @@ def generate(source: Path) -> str:
 
     _defs = [def_matcher.match(line) for line in raw]
     _defs = filter(lambda x: x is not None, _defs)
-    _defs = map(lambda x: x.groups(), _defs)
+    _defs = list(map(lambda x: x.groups(), _defs))
     defs = ["## Fields", ""] + [
-        f"- {name} ({type_}) -- {description}" for type_, name, description in _defs
+        f"- **{name}** (`{type_}`) -- {description}"
+        for type_, name, description in _defs
     ] + [""]
 
     _post_notes = itertools.takewhile(
@@ -70,7 +71,8 @@ def generate(source: Path) -> str:
     else:
         post_notes = ["## Notes", ""] + _post_notes
 
-    raw_code = ["## Raw definition", "", "```plaintext", *raw, "```", ""]
+    _raw_code = [f"{type_} {name}" for type_, name, _ in _defs]
+    raw_code = ["## Raw definitions", "", "```plaintext", *_raw_code, "```", ""]
 
     index = os.path.relpath(convert_path(index_path), convert_path(source).parent)
     home = ["---", "", f"[Home]({index})", ""]
