@@ -56,3 +56,8 @@ CATKIN_IGNORE
 
 # Mac OS
 .DS_Store
+
+# docs
+docs/public
+pyproject.toml
+poetry.lock
