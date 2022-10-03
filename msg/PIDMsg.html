@@ -1,0 +1,33 @@
+<style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+
+code {
+    color: #A1F;
+}
+</style>
+<h1>necst_msgs.msg.PIDMsg</h1>
+<p>Data type for PID controller parameters.</p>
+<h2>Fields</h2>
+<ul>
+<li>k_p (float64) --  Coefficient of the proportional term.</li>
+<li>k_i (float64) --  Coefficient of the integral term.</li>
+<li>k_d (float64) --  Coefficient of the derivative term.</li>
+<li>axis (string) --  Identifier of controlling axis, which will be <code>az</code> or <code>el</code>.</li>
+</ul>
+<h2>Raw definition</h2>
+<pre><code class="language-plaintext"># Data type for PID controller parameters.
+
+float64 k_p  # Coefficient of the proportional term.
+float64 k_i  # Coefficient of the integral term.
+float64 k_d  # Coefficient of the derivative term.
+string axis  # Identifier of controlling axis, which will be ``az`` or ``el``.
+</code></pre>
+<hr />
+<p><a href="../index.html">Home</a></p>

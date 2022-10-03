@@ -1,0 +1,32 @@
+<style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+
+code {
+    color: #A1F;
+}
+</style>
+<h1>necst_msgs.srv.AuthoritySrv</h1>
+<p>Data type for authority management.</p>
+<h2>Fields</h2>
+<ul>
+<li>requester (string) --  Identifier of node requesting for privilege.</li>
+<li>remove (bool) --  If <code>true</code>, this request is for privilege removal, not for acquisition.</li>
+<li>privilege (bool) --  If <code>true</code>, the requester node is considered to be privileged.</li>
+</ul>
+<h2>Raw definition</h2>
+<pre><code class="language-plaintext"># Data type for authority management.
+
+string requester  # Identifier of node requesting for privilege.
+bool remove       # If ``true``, this request is for privilege removal, not for acquisition.
+---
+bool privilege    # If ``true``, the requester node is considered to be privileged.
+</code></pre>
+<hr />
+<p><a href="../index.html">Home</a></p>

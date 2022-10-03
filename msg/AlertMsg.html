@@ -1,0 +1,35 @@
+<style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+
+code {
+    color: #A1F;
+}
+</style>
+<h1>necst_msgs.msg.AlertMsg</h1>
+<p>Data type for alert information.</p>
+<h2>Fields</h2>
+<ul>
+<li>threshold (float64) --  Threshold of critical condition.</li>
+<li>actual (float64) --  Actual value to compare with <code>threshold</code>.</li>
+<li>warning (bool) --  If <code>true</code>, the situation nears the threshold.</li>
+<li>critical (bool) --  If <code>true</code>, the situation has exceeded the threshold, and safeguard will be activated.</li>
+<li>issuer (string) --  Publisher's node name, which indicate the type of alert.</li>
+</ul>
+<h2>Raw definition</h2>
+<pre><code class="language-plaintext"># Data type for alert information.
+
+float64 threshold  # Threshold of critical condition.
+float64 actual     # Actual value to compare with ``threshold``.
+bool warning       # If ``true``, the situation nears the threshold.
+bool critical      # If ``true``, the situation has exceeded the threshold, and safeguard will be activated.
+string issuer      # Publisher's node name, which indicate the type of alert.
+</code></pre>
+<hr />
+<p><a href="../index.html">Home</a></p>

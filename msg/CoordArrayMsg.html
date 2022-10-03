@@ -1,0 +1,37 @@
+<style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+
+code {
+    color: #A1F;
+}
+</style>
+<h1>necst_msgs.msg.CoordArrayMsg</h1>
+<p>Data type for grouped celestial coordinate information.</p>
+<h2>Fields</h2>
+<ul>
+<li>lon (float64[]) --  Longitude in floating point value. Hour angle won't be accepted.</li>
+<li>lat (float64[]) --  Latitude.</li>
+<li>unit (string) --  Angular unit in which the longitude and latitude are given.</li>
+<li>frame (string) --  Coordinate frame in which the longitude and latitude are given.</li>
+<li>time (float64[]) --  Time the instructed coordinate si valid at, considering sidereal motion.</li>
+<li>name (string) --  Name of celestial body.</li>
+</ul>
+<h2>Raw definition</h2>
+<pre><code class="language-plaintext"># Data type for grouped celestial coordinate information.
+
+float64[] lon   # Longitude in floating point value. Hour angle won't be accepted.
+float64[] lat   # Latitude.
+string unit     # Angular unit in which the longitude and latitude are given.
+string frame    # Coordinate frame in which the longitude and latitude are given.
+float64[] time  # Time the instructed coordinate si valid at, considering sidereal motion.
+string name     # Name of celestial body.
+</code></pre>
+<hr />
+<p><a href="../index.html">Home</a></p>
