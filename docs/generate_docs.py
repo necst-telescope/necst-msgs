@@ -90,7 +90,11 @@ def generate_index(doc_path: Dict[str, Sequence[Path]]) -> str:
     return "\n".join([*title, *sections])
 
 def attach_style(md_content: str) -> str:
-    return style + md_content
+    try:
+        title = re.search(r"^# `?([\w\._]*)`?$", md_content.split("\n", 1)[0]).group(1)
+    except AttributeError:
+        title = ""
+    return f"<title>{title} Reference</title>" + style + md_content
 
 def convert_path(path: Path) -> Path:
     return public_root / path.relative_to(proj_root).with_suffix(".html")
