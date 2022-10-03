@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import itertools
+import os
 import re
 import shutil
 from pathlib import Path
@@ -11,6 +12,7 @@ import markdown
 pkg_name = "necst_msgs"
 
 proj_root = Path(__file__).parent.parent
+index_path = proj_root / "index.md"  # Virtual path, will be converted.
 
 section_roots = {
     "msg": proj_root / "msg",
@@ -65,7 +67,10 @@ def generate(source: Path) -> str:
 
     raw_code = ["## Raw definition", "", "```plaintext", *raw, "```", ""]
 
-    return "\n".join([*title, *description, *defs, *post_notes, *raw_code])
+    index = os.path.relpath(convert_path(index_path), convert_path(source).parent)
+    home = ["---", "", f"[Home]({index})", ""]
+
+    return "\n".join([*title, *description, *defs, *post_notes, *raw_code, *home])
 
 def generate_index(doc_path: Dict[str, Sequence[Path]]) -> str:
     title = [f"# {pkg_name}", ""]
@@ -80,8 +85,11 @@ def generate_index(doc_path: Dict[str, Sequence[Path]]) -> str:
 def attach_style(md_content: str) -> str:
     return style + md_content
 
+def convert_path(path: Path) -> Path:
+    return public_root / path.relative_to(proj_root).with_suffix(".html")
+
 def write(src_path: Path, content: str) -> Path:
-    doc_path = public_root / src_path.relative_to(proj_root).with_suffix(".html")
+    doc_path = convert_path(src_path)
     doc_path.parent.mkdir(parents=True, exist_ok=True)
     doc_path.touch(exist_ok=True)
     md_content = markdown.markdown(content, extensions=["tables", "fenced_code"])
@@ -101,6 +109,7 @@ if __name__ == "__main__":
         styled = [attach_style(g) for g in generated]
         generated_path[section] = [write(p, c) for p, c in zip(files, styled)]
     index = generate_index(generated_path)
-    p = write(proj_root / "index.md", index)
+    styled_index = attach_style(index)
+    p = write(index_path, styled_index)
 
 
