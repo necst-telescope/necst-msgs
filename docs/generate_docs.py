@@ -21,7 +21,7 @@ section_roots = {
 
 public_root = Path(__file__).parent / "public"
 
-def_matcher = re.compile(r"^([\w\[\]]+)\s*([\w_]+)\s*#?(.*)$")
+def_matcher = re.compile(r"^([\w\[\]]+)\s*([\w_]+)\s*#?(.*)$|^-+$")
 comment_matcher = re.compile(r"^\s*(?![\w]).*")
 
 style = """<style>
@@ -39,6 +39,7 @@ code {
 </style>
 """
 
+
 def generate(source: Path) -> str:
     relative_path = source.relative_to(proj_root).with_suffix("")
     _title = f"# `{pkg_name}/{relative_path}`".replace("/", ".")
@@ -55,7 +56,7 @@ def generate(source: Path) -> str:
     _defs = filter(lambda x: x is not None, _defs)
     _defs = list(map(lambda x: x.groups(), _defs))
     defs = ["## Fields", ""] + [
-        f"- **{name}** (`{type_}`) -- {description}"
+        f"- **{name}** (`{type_}`) -- {description}" if type_ else "- \-\-"
         for type_, name, description in _defs
     ] + [""]
 
@@ -71,7 +72,7 @@ def generate(source: Path) -> str:
     else:
         post_notes = ["## Notes", ""] + _post_notes
 
-    _raw_code = [f"{type_} {name}" for type_, name, _ in _defs]
+    _raw_code = [f"{type_} {name}" if type_ else "---" for type_, name, _ in _defs]
     raw_code = ["## Raw definitions", "", "```plaintext", *_raw_code, "```", ""]
 
     index = os.path.relpath(convert_path(index_path), convert_path(source).parent)
