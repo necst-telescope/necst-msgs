@@ -7,7 +7,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -24,7 +23,7 @@ code {
 <li>name (string) --  Name of celestial body.</li>
 </ul>
 <h2>Raw definition</h2>
-<pre><code class="language-plaintext"># Data type for grouped celestial coordinate information.
+<pre class="codehilite"><code class="language-plaintext"># Data type for grouped celestial coordinate information.
 
 float64[] lon   # Longitude in floating point value. Hour angle won't be accepted.
 float64[] lat   # Latitude.
@@ -33,5 +32,6 @@ string frame    # Coordinate frame in which the longitude and latitude are given
 float64[] time  # Time the instructed coordinate si valid at, considering sidereal motion.
 string name     # Name of celestial body.
 </code></pre>
+
 <hr />
 <p><a href="../index.html">Home</a></p>

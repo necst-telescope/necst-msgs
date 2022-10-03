@@ -7,7 +7,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -25,8 +24,16 @@ and name query (name, time).</p>
 <li>time (float64) --  Time the instructed coordinate is valid at, considering sidereal motion.</li>
 <li>name (string) --  Name of celestial body.</li>
 </ul>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import CoordMsg
+&gt;&gt;&gt; msg1 = CoordMsg(
+...     lon=5.0, lat=6.1, unit=&quot;deg&quot;, frame=&quot;fk5&quot;, time=1664792192.3645709
+... )
+&gt;&gt;&gt; msg2 = CoordMsg(name=&quot;pollux&quot;, time=1664792192.3645709)
+</code></pre>
+
 <h2>Raw definition</h2>
-<pre><code class="language-plaintext"># Data type for celestial coordinate information.
+<pre class="codehilite"><code class="language-plaintext"># Data type for celestial coordinate information.
 # This message can be used for coordinate specification (lon, lat, unit, frame, time)
 # and name query (name, time).
 
@@ -36,6 +43,16 @@ string unit   # Angular unit in which the longitude and latitude are given.
 string frame  # Coordinate frame in which the longitude and latitude are given.
 float64 time  # Time the instructed coordinate is valid at, considering sidereal motion.
 string name   # Name of celestial body.
+
+# ## Example
+# ```python
+# &gt;&gt;&gt; from necst_msgs.msg import CoordMsg
+# &gt;&gt;&gt; msg1 = CoordMsg(
+# ...     lon=5.0, lat=6.1, unit=&quot;deg&quot;, frame=&quot;fk5&quot;, time=1664792192.3645709
+# ... )
+# &gt;&gt;&gt; msg2 = CoordMsg(name=&quot;pollux&quot;, time=1664792192.3645709)
+# ```
 </code></pre>
+
 <hr />
 <p><a href="../index.html">Home</a></p>

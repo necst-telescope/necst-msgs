@@ -7,7 +7,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -20,13 +19,27 @@ code {
 <li>remove (bool) --  If <code>true</code>, this request is for privilege removal, not for acquisition.</li>
 <li>privilege (bool) --  If <code>true</code>, the requester node is considered to be privileged.</li>
 </ul>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.srv import AuthoritySrv
+&gt;&gt;&gt; request = AuthoritySrv.Request(requester=&quot;test_node-123&quot;, remove=True)
+&gt;&gt;&gt; response = AuthoritySrv.Response(privilege=False)
+</code></pre>
+
 <h2>Raw definition</h2>
-<pre><code class="language-plaintext"># Data type for authority management.
+<pre class="codehilite"><code class="language-plaintext"># Data type for authority management.
 
 string requester  # Identifier of node requesting for privilege.
 bool remove       # If ``true``, this request is for privilege removal, not for acquisition.
 ---
 bool privilege    # If ``true``, the requester node is considered to be privileged.
+
+# ## Example
+# ```python
+# &gt;&gt;&gt; from necst_msgs.srv import AuthoritySrv
+# &gt;&gt;&gt; request = AuthoritySrv.Request(requester=&quot;test_node-123&quot;, remove=True)
+# &gt;&gt;&gt; response = AuthoritySrv.Response(privilege=False)
+# ```
 </code></pre>
+
 <hr />
 <p><a href="../index.html">Home</a></p>

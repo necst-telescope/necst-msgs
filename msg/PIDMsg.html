@@ -7,7 +7,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -21,13 +20,25 @@ code {
 <li>k_d (float64) --  Coefficient of the derivative term.</li>
 <li>axis (string) --  Identifier of controlling axis, which will be <code>az</code> or <code>el</code>.</li>
 </ul>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import PIDMsg
+&gt;&gt;&gt; msg = PIDMsg(k_p=2.0, k_i=0.0, k_d=0.0)
+</code></pre>
+
 <h2>Raw definition</h2>
-<pre><code class="language-plaintext"># Data type for PID controller parameters.
+<pre class="codehilite"><code class="language-plaintext"># Data type for PID controller parameters.
 
 float64 k_p  # Coefficient of the proportional term.
 float64 k_i  # Coefficient of the integral term.
 float64 k_d  # Coefficient of the derivative term.
 string axis  # Identifier of controlling axis, which will be ``az`` or ``el``.
+
+# ## Example
+# ```python
+# &gt;&gt;&gt; from necst_msgs.msg import PIDMsg
+# &gt;&gt;&gt; msg = PIDMsg(k_p=2.0, k_i=0.0, k_d=0.0)
+# ```
 </code></pre>
+
 <hr />
 <p><a href="../index.html">Home</a></p>

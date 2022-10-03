@@ -7,7 +7,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -20,12 +19,24 @@ code {
 <li>el (float64) --  Value for elevation (altitude) axis.</li>
 <li>time (float64) --  Time at which the data is published or is valid.</li>
 </ul>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import TimedAzElFloat64
+&gt;&gt;&gt; msg = TimedAzElFloat64(az=2.0, el=0.1, time=1664792192.3645709)
+</code></pre>
+
 <h2>Raw definition</h2>
-<pre><code class="language-plaintext"># Generic data type for set of float64 values for az/el axes, with timestamp.
+<pre class="codehilite"><code class="language-plaintext"># Generic data type for set of float64 values for az/el axes, with timestamp.
 
 float64 az    # Value for azimuth axis.
 float64 el    # Value for elevation (altitude) axis.
 float64 time  # Time at which the data is published or is valid.
+
+# ## Example
+# ```python
+# &gt;&gt;&gt; from necst_msgs.msg import TimedAzElFloat64
+# &gt;&gt;&gt; msg = TimedAzElFloat64(az=2.0, el=0.1, time=1664792192.3645709)
+# ```
 </code></pre>
+
 <hr />
 <p><a href="../index.html">Home</a></p>

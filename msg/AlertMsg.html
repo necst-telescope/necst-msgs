@@ -7,7 +7,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -22,14 +21,30 @@ code {
 <li>critical (bool) --  If <code>true</code>, the situation has exceeded the threshold, and safeguard will be activated.</li>
 <li>issuer (string) --  Publisher's node name, which indicate the type of alert.</li>
 </ul>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import AlertMsg
+&gt;&gt;&gt; msg = AlertMsg(
+...     threshold=5.0, actual=6.1, warning=True, critical=False, issuer=&quot;necst/alert/sun_vicinity&quot;
+... )
+</code></pre>
+
 <h2>Raw definition</h2>
-<pre><code class="language-plaintext"># Data type for alert information.
+<pre class="codehilite"><code class="language-plaintext"># Data type for alert information.
 
 float64 threshold  # Threshold of critical condition.
 float64 actual     # Actual value to compare with ``threshold``.
 bool warning       # If ``true``, the situation nears the threshold.
 bool critical      # If ``true``, the situation has exceeded the threshold, and safeguard will be activated.
 string issuer      # Publisher's node name, which indicate the type of alert.
+
+# ## Example
+# ```python
+# &gt;&gt;&gt; from necst_msgs.msg import AlertMsg
+# &gt;&gt;&gt; msg = AlertMsg(
+# ...     threshold=5.0, actual=6.1, warning=True, critical=False, issuer=&quot;necst/alert/sun_vicinity&quot;
+# ... )
+# ```
 </code></pre>
+
 <hr />
 <p><a href="../index.html">Home</a></p>
