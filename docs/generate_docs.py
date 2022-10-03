@@ -33,7 +33,6 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
@@ -63,7 +62,13 @@ def generate(source: Path) -> str:
         lambda line: comment_matcher.match(line) is not None, reversed(raw)
     )
     _post_notes = [line.strip("#").strip() for line in reversed(list(_post_notes))]
-    post_notes = [] if len(_post_notes) == 0 else ["## Notes", ""] + _post_notes
+    _post_notes = [line for line in _post_notes if line != ""]
+    if len(_post_notes) == 0:
+        post_notes = []
+    elif _post_notes[0].startswith("#"):
+        post_notes = _post_notes
+    else:
+        post_notes = ["## Notes", ""] + _post_notes
 
     raw_code = ["## Raw definition", "", "```plaintext", *raw, "```", ""]
 
@@ -92,7 +97,9 @@ def write(src_path: Path, content: str) -> Path:
     doc_path = convert_path(src_path)
     doc_path.parent.mkdir(parents=True, exist_ok=True)
     doc_path.touch(exist_ok=True)
-    md_content = markdown.markdown(content, extensions=["tables", "fenced_code"])
+    md_content = markdown.markdown(
+        content, extensions=["tables", "fenced_code", "codehilite"]
+    )
     doc_path.write_text(md_content)
     return doc_path
 
@@ -111,5 +118,3 @@ if __name__ == "__main__":
     index = generate_index(generated_path)
     styled_index = attach_style(index)
     p = write(index_path, styled_index)
-
-
