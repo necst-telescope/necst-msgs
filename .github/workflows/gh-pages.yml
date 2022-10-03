@@ -1,0 +1,30 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  job:
+    name: BuildDocs
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_NAME: necst-msgs
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Set-up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          pip install markdown
+      - name: Build documentation
+        run: |
+          ./docs/generate_docs.py
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/public
