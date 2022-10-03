@@ -15,27 +15,19 @@ code {
 <p>Generic data type for set of int64 values for az/el axes, with timestamp.</p>
 <h2>Fields</h2>
 <ul>
-<li>az (int64) --  Value for azimuth axis.</li>
-<li>el (int64) --  Value for elevation (altitude) axis.</li>
-<li>time (float64) --  Time at which the data is published or is valid.</li>
+<li><strong>az</strong> (<code>int64</code>) --  Value for azimuth axis.</li>
+<li><strong>el</strong> (<code>int64</code>) --  Value for elevation (altitude) axis.</li>
+<li><strong>time</strong> (<code>float64</code>) --  Time at which the data is published or is valid.</li>
 </ul>
 <h2>Example</h2>
 <pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import TimedAzElInt64
 &gt;&gt;&gt; msg = TimedAzElInt64(az=1, el=0, time=1664792192.3645709)
 </code></pre>
 
-<h2>Raw definition</h2>
-<pre class="codehilite"><code class="language-plaintext"># Generic data type for set of int64 values for az/el axes, with timestamp.
-
-int64 az    # Value for azimuth axis.
-int64 el    # Value for elevation (altitude) axis.
-float64 time  # Time at which the data is published or is valid.
-
-# ## Example
-# ```python
-# &gt;&gt;&gt; from necst_msgs.msg import TimedAzElInt64
-# &gt;&gt;&gt; msg = TimedAzElInt64(az=1, el=0, time=1664792192.3645709)
-# ```
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">int64 az
+int64 el
+float64 time
 </code></pre>
 
 <hr />

@@ -15,9 +15,9 @@ code {
 <p>Data type for authority management.</p>
 <h2>Fields</h2>
 <ul>
-<li>requester (string) --  Identifier of node requesting for privilege.</li>
-<li>remove (bool) --  If <code>true</code>, this request is for privilege removal, not for acquisition.</li>
-<li>privilege (bool) --  If <code>true</code>, the requester node is considered to be privileged.</li>
+<li><strong>requester</strong> (<code>string</code>) --  Identifier of node requesting for privilege.</li>
+<li><strong>remove</strong> (<code>bool</code>) --  If <code>true</code>, this request is for privilege removal, not for acquisition.</li>
+<li><strong>privilege</strong> (<code>bool</code>) --  If <code>true</code>, the requester node is considered to be privileged.</li>
 </ul>
 <h2>Example</h2>
 <pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.srv import AuthoritySrv
@@ -25,20 +25,10 @@ code {
 &gt;&gt;&gt; response = AuthoritySrv.Response(privilege=False)
 </code></pre>
 
-<h2>Raw definition</h2>
-<pre class="codehilite"><code class="language-plaintext"># Data type for authority management.
-
-string requester  # Identifier of node requesting for privilege.
-bool remove       # If ``true``, this request is for privilege removal, not for acquisition.
----
-bool privilege    # If ``true``, the requester node is considered to be privileged.
-
-# ## Example
-# ```python
-# &gt;&gt;&gt; from necst_msgs.srv import AuthoritySrv
-# &gt;&gt;&gt; request = AuthoritySrv.Request(requester=&quot;test_node-123&quot;, remove=True)
-# &gt;&gt;&gt; response = AuthoritySrv.Response(privilege=False)
-# ```
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">string requester
+bool remove
+bool privilege
 </code></pre>
 
 <hr />

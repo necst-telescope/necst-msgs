@@ -15,11 +15,11 @@ code {
 <p>Data type for alert information.</p>
 <h2>Fields</h2>
 <ul>
-<li>threshold (float64) --  Threshold of critical condition.</li>
-<li>actual (float64) --  Actual value to compare with <code>threshold</code>.</li>
-<li>warning (bool) --  If <code>true</code>, the situation nears the threshold.</li>
-<li>critical (bool) --  If <code>true</code>, the situation has exceeded the threshold, and safeguard will be activated.</li>
-<li>issuer (string) --  Publisher's node name, which indicate the type of alert.</li>
+<li><strong>threshold</strong> (<code>float64</code>) --  Threshold of critical condition.</li>
+<li><strong>actual</strong> (<code>float64</code>) --  Actual value to compare with <code>threshold</code>.</li>
+<li><strong>warning</strong> (<code>bool</code>) --  If <code>true</code>, the situation nears the threshold.</li>
+<li><strong>critical</strong> (<code>bool</code>) --  If <code>true</code>, the situation has exceeded the threshold, and safeguard will be activated.</li>
+<li><strong>issuer</strong> (<code>string</code>) --  Publisher's node name, which indicate the type of alert.</li>
 </ul>
 <h2>Example</h2>
 <pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import AlertMsg
@@ -28,22 +28,12 @@ code {
 ... )
 </code></pre>
 
-<h2>Raw definition</h2>
-<pre class="codehilite"><code class="language-plaintext"># Data type for alert information.
-
-float64 threshold  # Threshold of critical condition.
-float64 actual     # Actual value to compare with ``threshold``.
-bool warning       # If ``true``, the situation nears the threshold.
-bool critical      # If ``true``, the situation has exceeded the threshold, and safeguard will be activated.
-string issuer      # Publisher's node name, which indicate the type of alert.
-
-# ## Example
-# ```python
-# &gt;&gt;&gt; from necst_msgs.msg import AlertMsg
-# &gt;&gt;&gt; msg = AlertMsg(
-# ...     threshold=5.0, actual=6.1, warning=True, critical=False, issuer=&quot;necst/alert/sun_vicinity&quot;
-# ... )
-# ```
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">float64 threshold
+float64 actual
+bool warning
+bool critical
+string issuer
 </code></pre>
 
 <hr />

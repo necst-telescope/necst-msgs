@@ -17,12 +17,12 @@ This message can be used for coordinate specification (lon, lat, unit, frame, ti
 and name query (name, time).</p>
 <h2>Fields</h2>
 <ul>
-<li>lon (float64) --  Longitude in floating point value. Hour angle won't be accepted.</li>
-<li>lat (float64) --  Latitude.</li>
-<li>unit (string) --  Angular unit in which the longitude and latitude are given.</li>
-<li>frame (string) --  Coordinate frame in which the longitude and latitude are given.</li>
-<li>time (float64) --  Time the instructed coordinate is valid at, considering sidereal motion.</li>
-<li>name (string) --  Name of celestial body.</li>
+<li><strong>lon</strong> (<code>float64</code>) --  Longitude in floating point value. Hour angle won't be accepted.</li>
+<li><strong>lat</strong> (<code>float64</code>) --  Latitude.</li>
+<li><strong>unit</strong> (<code>string</code>) --  Angular unit in which the longitude and latitude are given.</li>
+<li><strong>frame</strong> (<code>string</code>) --  Coordinate frame in which the longitude and latitude are given.</li>
+<li><strong>time</strong> (<code>float64</code>) --  Time the instructed coordinate is valid at, considering sidereal motion.</li>
+<li><strong>name</strong> (<code>string</code>) --  Name of celestial body.</li>
 </ul>
 <h2>Example</h2>
 <pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import CoordMsg
@@ -32,26 +32,13 @@ and name query (name, time).</p>
 &gt;&gt;&gt; msg2 = CoordMsg(name=&quot;pollux&quot;, time=1664792192.3645709)
 </code></pre>
 
-<h2>Raw definition</h2>
-<pre class="codehilite"><code class="language-plaintext"># Data type for celestial coordinate information.
-# This message can be used for coordinate specification (lon, lat, unit, frame, time)
-# and name query (name, time).
-
-float64 lon   # Longitude in floating point value. Hour angle won't be accepted.
-float64 lat   # Latitude.
-string unit   # Angular unit in which the longitude and latitude are given.
-string frame  # Coordinate frame in which the longitude and latitude are given.
-float64 time  # Time the instructed coordinate is valid at, considering sidereal motion.
-string name   # Name of celestial body.
-
-# ## Example
-# ```python
-# &gt;&gt;&gt; from necst_msgs.msg import CoordMsg
-# &gt;&gt;&gt; msg1 = CoordMsg(
-# ...     lon=5.0, lat=6.1, unit=&quot;deg&quot;, frame=&quot;fk5&quot;, time=1664792192.3645709
-# ... )
-# &gt;&gt;&gt; msg2 = CoordMsg(name=&quot;pollux&quot;, time=1664792192.3645709)
-# ```
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">float64 lon
+float64 lat
+string unit
+string frame
+float64 time
+string name
 </code></pre>
 
 <hr />
