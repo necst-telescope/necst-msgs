@@ -21,7 +21,7 @@ section_roots = {
 
 public_root = Path(__file__).parent / "public"
 
-def_matcher = re.compile(r"^([\w\[\]]+)\s*([\w_]+)\s*#?(.*)$")
+def_matcher = re.compile(r"^([\w\[\]]+)\s*([\w_]+)\s*#?(.*)$|^-+$")
 comment_matcher = re.compile(r"^\s*(?![\w]).*")
 
 style = """<style>
@@ -33,12 +33,12 @@ pre {
     border: 3px ridge #777;
     padding: 10px;
 }
-
 code {
     color: #A1F;
 }
 </style>
 """
+
 
 def generate(source: Path) -> str:
     relative_path = source.relative_to(proj_root).with_suffix("")
@@ -54,18 +54,26 @@ def generate(source: Path) -> str:
 
     _defs = [def_matcher.match(line) for line in raw]
     _defs = filter(lambda x: x is not None, _defs)
-    _defs = map(lambda x: x.groups(), _defs)
+    _defs = list(map(lambda x: x.groups(), _defs))
     defs = ["## Fields", ""] + [
-        f"- {name} ({type_}) -- {description}" for type_, name, description in _defs
+        f"- **{name}** (`{type_}`) -- {description}" if type_ else "- \-\-"
+        for type_, name, description in _defs
     ] + [""]
 
     _post_notes = itertools.takewhile(
         lambda line: comment_matcher.match(line) is not None, reversed(raw)
     )
     _post_notes = [line.strip("#").strip() for line in reversed(list(_post_notes))]
-    post_notes = [] if len(_post_notes) == 0 else ["## Notes", ""] + _post_notes
+    _post_notes = [line for line in _post_notes if line != ""]
+    if len(_post_notes) == 0:
+        post_notes = []
+    elif _post_notes[0].startswith("#"):
+        post_notes = _post_notes
+    else:
+        post_notes = ["## Notes", ""] + _post_notes
 
-    raw_code = ["## Raw definition", "", "```plaintext", *raw, "```", ""]
+    _raw_code = [f"{type_} {name}" if type_ else "---" for type_, name, _ in _defs]
+    raw_code = ["## Raw definitions", "", "```plaintext", *_raw_code, "```", ""]
 
     index = os.path.relpath(convert_path(index_path), convert_path(source).parent)
     home = ["---", "", f"[Home]({index})", ""]
@@ -83,7 +91,11 @@ def generate_index(doc_path: Dict[str, Sequence[Path]]) -> str:
     return "\n".join([*title, *sections])
 
 def attach_style(md_content: str) -> str:
-    return style + md_content
+    try:
+        title = re.search(r"^# `?([\w\._]*)`?$", md_content.split("\n", 1)[0]).group(1)
+    except AttributeError:
+        title = ""
+    return f"<title>{title} Reference</title>" + style + md_content
 
 def convert_path(path: Path) -> Path:
     return public_root / path.relative_to(proj_root).with_suffix(".html")
@@ -92,7 +104,9 @@ def write(src_path: Path, content: str) -> Path:
     doc_path = convert_path(src_path)
     doc_path.parent.mkdir(parents=True, exist_ok=True)
     doc_path.touch(exist_ok=True)
-    md_content = markdown.markdown(content, extensions=["tables", "fenced_code"])
+    md_content = markdown.markdown(
+        content, extensions=["tables", "fenced_code", "codehilite"]
+    )
     doc_path.write_text(md_content)
     return doc_path
 
@@ -111,5 +125,3 @@ if __name__ == "__main__":
     index = generate_index(generated_path)
     styled_index = attach_style(index)
     p = write(index_path, styled_index)
-
-
