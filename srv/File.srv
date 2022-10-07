@@ -1,0 +1,13 @@
+# Data type for transferring file contents.
+
+string data   # Contents of the file.
+string path   # Where the original file was located, possibly with IP address.
+---
+bool success  # Whether the file was successfully transferred or not.
+
+# ## Example
+# ```python
+# >>> from from necst_msgs.srv import File
+# >>> msg = File.Request(data=path.read_text(path), path=path)
+# >>> response = File.Response(success=True)
+# ```

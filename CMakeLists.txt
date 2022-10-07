@@ -18,6 +18,7 @@ set(msg_files
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
+  "srv/File.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
