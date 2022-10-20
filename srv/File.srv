@@ -7,7 +7,7 @@ bool success  # Whether the file was successfully transferred or not.
 
 # ## Example
 # ```python
-# >>> from from necst_msgs.srv import File
-# >>> msg = File.Request(data=path.read_text(path), path=path)
+# >>> from necst_msgs.srv import File
+# >>> msg = File.Request(data=path.read_text(), path=str(path))
 # >>> response = File.Response(success=True)
 # ```
