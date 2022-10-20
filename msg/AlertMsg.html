@@ -15,7 +15,7 @@ code {
 <p>Data type for alert information.</p>
 <h2>Fields</h2>
 <ul>
-<li><strong>threshold</strong> (<code>float64</code>) --  Threshold of critical condition.</li>
+<li><strong>threshold</strong> (<code>float64[]</code>) --  Threshold of critical condition.</li>
 <li><strong>actual</strong> (<code>float64</code>) --  Actual value to compare with <code>threshold</code>.</li>
 <li><strong>warning</strong> (<code>bool</code>) --  If <code>true</code>, the situation nears the threshold.</li>
 <li><strong>critical</strong> (<code>bool</code>) --  If <code>true</code>, the situation has exceeded the threshold, and safeguard will be activated.</li>
@@ -29,7 +29,7 @@ code {
 </code></pre>
 
 <h2>Raw definitions</h2>
-<pre class="codehilite"><code class="language-plaintext">float64 threshold
+<pre class="codehilite"><code class="language-plaintext">float64[] threshold
 float64 actual
 bool warning
 bool critical

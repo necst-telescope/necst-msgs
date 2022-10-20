@@ -21,8 +21,8 @@ code {
 <li><strong>success</strong> (<code>bool</code>) --  Whether the file was successfully transferred or not.</li>
 </ul>
 <h2>Example</h2>
-<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from from necst_msgs.srv import File
-&gt;&gt;&gt; msg = File.Request(data=path.read_text(path), path=path)
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.srv import File
+&gt;&gt;&gt; msg = File.Request(data=path.read_text(), path=str(path))
 &gt;&gt;&gt; response = File.Response(success=True)
 </code></pre>
 
