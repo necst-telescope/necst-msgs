@@ -15,6 +15,7 @@ set(msg_files
   "msg/PIDMsg.msg"
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
+  "msg/TimedFloat64.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
