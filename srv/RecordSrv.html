@@ -1,0 +1,37 @@
+<p><title>necst_msgs.srv.RecordSrv Reference</title><style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+code {
+    color: #A1F;
+}
+</style></p>
+<h1><code>necst_msgs.srv.RecordSrv</code></h1>
+<p>Interface for record status management.</p>
+<h2>Fields</h2>
+<ul>
+<li><strong>name</strong> (<code>string</code>) --  Record name.</li>
+<li><strong>stop</strong> (<code>bool</code>) --  If <code>true</code>, current recording will be stopped.</li>
+<li>--</li>
+<li><strong>recording</strong> (<code>bool</code>) --  If <code>true</code>, recording is in progress.</li>
+</ul>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import RecordSrv
+&gt;&gt;&gt; request = RecordSrv.Request(name=&quot;20221104202640_OriKL&quot;)
+&gt;&gt;&gt; response = RecordSrv.Response(recording=True)
+</code></pre>
+
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">string name
+bool stop
+---
+bool recording
+</code></pre>
+
+<hr />
+<p><a href="../index.html">Home</a></p>
