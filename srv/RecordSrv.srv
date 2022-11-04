@@ -1,0 +1,13 @@
+# Interface for record status management.
+
+string name     # Record name.
+bool stop       # If ``true``, current recording will be stopped.
+---
+bool recording  # If ``true``, recording is in progress.
+
+# ## Example
+# ```python
+# >>> from necst_msgs.msg import RecordSrv
+# >>> request = RecordSrv.Request(name="20221104202640_OriKL")
+# >>> response = RecordSrv.Response(recording=True)
+# ```
