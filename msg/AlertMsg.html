@@ -19,12 +19,12 @@ code {
 <li><strong>actual</strong> (<code>float64</code>) --  Actual value to compare with <code>threshold</code>.</li>
 <li><strong>warning</strong> (<code>bool</code>) --  If <code>true</code>, the situation nears the threshold.</li>
 <li><strong>critical</strong> (<code>bool</code>) --  If <code>true</code>, the situation has exceeded the threshold, and safeguard will be activated.</li>
-<li><strong>issuer</strong> (<code>string</code>) --  Publisher's node name, which indicate the type of alert.</li>
+<li><strong>target</strong> (<code>string[]</code>) --  Part(s) of the system this alert information is valid.</li>
 </ul>
 <h2>Example</h2>
 <pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import AlertMsg
 &gt;&gt;&gt; msg = AlertMsg(
-...     threshold=5.0, actual=6.1, warning=True, critical=False, issuer=&quot;necst/alert/sun_vicinity&quot;
+...     threshold=5.0, actual=6.1, warning=True, critical=False, target=[&quot;all&quot;]
 ... )
 </code></pre>
 
@@ -33,7 +33,7 @@ code {
 float64 actual
 bool warning
 bool critical
-string issuer
+string[] target
 </code></pre>
 
 <hr />
