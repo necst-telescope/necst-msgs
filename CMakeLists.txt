@@ -10,6 +10,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
   "msg/AlertMsg.msg"
+  "msg/ChopperMsg.msg"
   "msg/CoordMsg.msg"
   "msg/CoordArrayMsg.msg"
   "msg/PIDMsg.msg"
