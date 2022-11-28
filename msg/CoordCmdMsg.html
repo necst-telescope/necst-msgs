@@ -1,4 +1,4 @@
-<p><title>necst_msgs.msg.CoordArrayMsg Reference</title><style>
+<p><title>necst_msgs.msg.CoordCmdMsg Reference</title><style>
 body {
     padding: 7px;
 }
@@ -11,7 +11,7 @@ code {
     color: #A1F;
 }
 </style></p>
-<h1><code>necst_msgs.msg.CoordArrayMsg</code></h1>
+<h1><code>necst_msgs.msg.CoordCmdMsg</code></h1>
 <p>Data type for grouped celestial coordinate information.</p>
 <h2>Fields</h2>
 <ul>
@@ -21,6 +21,7 @@ code {
 <li><strong>frame</strong> (<code>string</code>) --  Coordinate frame in which the longitude and latitude are given.</li>
 <li><strong>time</strong> (<code>float64[]</code>) --  Time the instructed coordinate si valid at, considering sidereal motion.</li>
 <li><strong>name</strong> (<code>string</code>) --  Name of celestial body.</li>
+<li><strong>speed</strong> (<code>float64</code>) --  Speed at which provided coordinate is scanned through.</li>
 </ul>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">float64[] lon
@@ -29,6 +30,7 @@ string unit
 string frame
 float64[] time
 string name
+float64 speed
 </code></pre>
 
 <hr />
