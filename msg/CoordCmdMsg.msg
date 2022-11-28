@@ -6,3 +6,4 @@ string unit     # Angular unit in which the longitude and latitude are given.
 string frame    # Coordinate frame in which the longitude and latitude are given.
 float64[] time  # Time the instructed coordinate si valid at, considering sidereal motion.
 string name     # Name of celestial body.
+float64 speed   # Speed at which provided coordinate is scanned through.
