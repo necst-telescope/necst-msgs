@@ -12,7 +12,7 @@ set(msg_files
   "msg/AlertMsg.msg"
   "msg/ChopperMsg.msg"
   "msg/CoordMsg.msg"
-  "msg/CoordArrayMsg.msg"
+  "msg/CoordCmdMsg.msg"
   "msg/PIDMsg.msg"
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
