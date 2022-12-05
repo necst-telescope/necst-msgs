@@ -21,7 +21,7 @@ section_roots = {
 
 public_root = Path(__file__).parent / "public"
 
-def_matcher = re.compile(r"^([\w\[\]]+)\s*([\w_]+)\s*#?(.*)$|^-+$")
+def_matcher = re.compile(r"^([\w\[\]<=]+)\s*([\w_]+)\s*#?(.*)$|^-+$")
 comment_matcher = re.compile(r"^\s*(?![\w]).*")
 
 style = """<style>
