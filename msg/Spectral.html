@@ -16,8 +16,8 @@ code {
 <h2>Fields</h2>
 <ul>
 <li><strong>data</strong> (<code>float32[]</code>) --  The spectral data.</li>
-<li><strong>g</strong> (<code>strin</code>) -- &lt;=8 position  # Observing position, such as ON, OFF, HOT, etc., up to 8 characters.</li>
-<li><strong>g</strong> (<code>strin</code>) -- &lt;=16 id       # Specific ID for current data, up to 16 characters.</li>
+<li><strong>position</strong> (<code>string&lt;=8</code>) --  Observing position, such as ON, OFF, HOT, etc., up to 8 characters.</li>
+<li><strong>id</strong> (<code>string&lt;=16</code>) --  Specific ID for current data, up to 16 characters.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the data is taken on.</li>
 </ul>
 <h2>Example</h2>
@@ -29,8 +29,8 @@ code {
 
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">float32[] data
-strin g
-strin g
+string&lt;=8 position
+string&lt;=16 id
 float64 time
 </code></pre>
 
