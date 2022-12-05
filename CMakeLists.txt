@@ -14,6 +14,7 @@ set(msg_files
   "msg/CoordMsg.msg"
   "msg/CoordCmdMsg.msg"
   "msg/PIDMsg.msg"
+  "msg/Spectral.msg"
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
   "msg/TimedFloat64.msg"
