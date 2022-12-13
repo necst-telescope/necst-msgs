@@ -19,6 +19,7 @@ set(msg_files
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
   "msg/TimedFloat64.msg"
+  "msg/WeatherMsg.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
