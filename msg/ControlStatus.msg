@@ -1,0 +1,2 @@
+bool controlled
+bool remote
