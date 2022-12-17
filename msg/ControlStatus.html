@@ -12,14 +12,17 @@ code {
 }
 </style></p>
 <h1><code>necst_msgs.msg.ControlStatus</code></h1>
+<p>Interface definition for control status indicator.</p>
 <h2>Fields</h2>
 <ul>
-<li><strong>controlled</strong> (<code>bool</code>) -- </li>
-<li><strong>remote</strong> (<code>bool</code>) -- </li>
+<li><strong>controlled</strong> (<code>bool</code>) --  If <code>true</code>, this component has valid control command now.</li>
+<li><strong>remote</strong> (<code>bool</code>) --  If <code>true</code>, this component is remotely controlled</li>
+<li><strong>time</strong> (<code>float64</code>) --  Timestamp of this status</li>
 </ul>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">bool controlled
 bool remote
+float64 time
 </code></pre>
 
 <hr />
