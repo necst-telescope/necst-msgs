@@ -19,6 +19,10 @@ code {
 <li><strong>position</strong> (<code>string&lt;=8</code>) --  Observing position, such as ON, OFF, HOT, etc., up to 8 characters.</li>
 <li><strong>id</strong> (<code>string&lt;=16</code>) --  Specific ID for current data, up to 16 characters.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the data is taken on.</li>
+<li><strong>ch</strong> (<code>int32[&lt;=2]</code>) --  Stream range specification in spectrometer channel.</li>
+<li><strong>rfreq</strong> (<code>float64[&lt;=2]</code>) --  Stream range specification in radio frequency.</li>
+<li><strong>ifreq</strong> (<code>float64[&lt;=2]</code>) --  Stream range specification in intermediate frequency.</li>
+<li><strong>vlsr</strong> (<code>float64[&lt;=2]</code>) --  Stream range specification in local standard of rest velocity.</li>
 </ul>
 <h2>Example</h2>
 <pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import Spectral
@@ -32,6 +36,10 @@ code {
 string&lt;=8 position
 string&lt;=16 id
 float64 time
+int32[&lt;=2] ch
+float64[&lt;=2] rfreq
+float64[&lt;=2] ifreq
+float64[&lt;=2] vlsr
 </code></pre>
 
 <hr />
