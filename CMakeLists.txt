@@ -16,6 +16,7 @@ set(msg_files
   "msg/CoordMsg.msg"
   "msg/CoordCmdMsg.msg"
   "msg/PIDMsg.msg"
+  "msg/QLookMeta.msg"
   "msg/Spectral.msg"
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
