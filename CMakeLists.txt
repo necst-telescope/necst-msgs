@@ -15,6 +15,7 @@ set(msg_files
   "msg/ControlStatus.msg"
   "msg/CoordMsg.msg"
   "msg/CoordCmdMsg.msg"
+  "msg/LocalSignal.msg"
   "msg/PIDMsg.msg"
   "msg/Spectral.msg"
   "msg/TimedAzElFloat64.msg"
