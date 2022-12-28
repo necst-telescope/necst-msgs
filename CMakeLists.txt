@@ -12,6 +12,7 @@ set(msg_files
   "msg/AlertMsg.msg"
   "msg/BiasMsg.msg"
   "msg/ChopperMsg.msg"
+  "msg/Clock.msg"
   "msg/ControlStatus.msg"
   "msg/CoordMsg.msg"
   "msg/CoordCmdMsg.msg"
