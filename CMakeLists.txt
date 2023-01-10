@@ -11,6 +11,7 @@ find_package(rosidl_default_generators REQUIRED)
 set(msg_files
   "msg/AlertMsg.msg"
   "msg/BiasMsg.msg"
+  "msg/Boolean.msg"
   "msg/ChopperMsg.msg"
   "msg/Clock.msg"
   "msg/ControlStatus.msg"
