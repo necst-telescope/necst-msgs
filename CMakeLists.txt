@@ -20,6 +20,7 @@ set(msg_files
   "msg/DeviceReading.msg"
   "msg/LocalSignal.msg"
   "msg/PIDMsg.msg"
+  "msg/Sampling.msg"
   "msg/Spectral.msg"
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
