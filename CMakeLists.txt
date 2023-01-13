@@ -16,7 +16,6 @@ set(msg_files
   "msg/Clock.msg"
   "msg/ControlStatus.msg"
   "msg/CoordMsg.msg"
-  "msg/CoordCmdMsg.msg"
   "msg/DeviceReading.msg"
   "msg/LocalSignal.msg"
   "msg/PIDMsg.msg"
@@ -30,6 +29,7 @@ set(msg_files
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
+  "srv/CoordinateCommand.srv"
   "srv/File.srv"
   "srv/RecordSrv.srv"
 )
