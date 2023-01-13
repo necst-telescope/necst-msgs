@@ -1,0 +1,14 @@
+# Data type for grouped celestial coordinate information.
+
+float64[<=2] lon   # Longitude in floating point value. Hour angle won't be accepted.
+float64[<=2] lat   # Latitude.
+string frame       # Coordinate frame in which the longitude and latitude are given.
+float64[<=2] offset_lon
+float64[<=2] offset_lat
+string offset_frame
+string unit        # Angular unit in which the longitude and latitude are given.
+float64[] time     # Time the instructed coordinate si valid at, considering sidereal motion.
+string name        # Name of celestial body.
+float64 speed      # Speed at which provided coordinate is scanned through.
+---
+string<=64 id      # Identifier of the control section.
