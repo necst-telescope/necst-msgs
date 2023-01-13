@@ -29,7 +29,7 @@ set(msg_files
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
-  "srv/CoordCmd.srv"
+  "srv/CoordinateCommand.srv"
   "srv/File.srv"
   "srv/RecordSrv.srv"
 )
