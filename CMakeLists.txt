@@ -10,16 +10,17 @@ find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
   "msg/AlertMsg.msg"
-  "msg/BiasMsg.msg"
   "msg/Boolean.msg"
   "msg/ChopperMsg.msg"
   "msg/Clock.msg"
   "msg/ControlStatus.msg"
   "msg/CoordMsg.msg"
   "msg/DeviceReading.msg"
+  "msg/HEMTBias.msg"
   "msg/LocalSignal.msg"
   "msg/PIDMsg.msg"
   "msg/Sampling.msg"
+  "msg/SISBias.msg"
   "msg/Spectral.msg"
   "msg/TimedAzElFloat64.msg"
   "msg/TimedAzElInt64.msg"
