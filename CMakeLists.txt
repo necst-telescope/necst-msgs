@@ -18,6 +18,7 @@ set(msg_files
   "msg/DeviceReading.msg"
   "msg/HEMTBias.msg"
   "msg/LocalSignal.msg"
+  "msg/ObservingMode.msg"
   "msg/PIDMsg.msg"
   "msg/Sampling.msg"
   "msg/SISBias.msg"
@@ -32,6 +33,7 @@ set(srv_files
   "srv/AuthoritySrv.srv"
   "srv/CoordinateCommand.srv"
   "srv/File.srv"
+  "srv/ObservationMode.srv"
   "srv/RecordSrv.srv"
 )
 

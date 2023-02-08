@@ -1,0 +1,5 @@
+# Service interface to get observation mode at specific time.
+
+float64 time    # Time at which observation mode should be valid.
+---
+string<=8 mode  # Observation mode.
