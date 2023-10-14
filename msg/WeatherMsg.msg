@@ -1,7 +1,7 @@
 #  Interface definition for weather information.
 
 float64 pressure # Atmospheric pressure, in hPa.
-float64 in_temoerature # Indoor temperature, in K.
+float64 in_temperature # Indoor temperature, in K.
 float64 in_humidity # Indooor relative humidity, between 0 and 1.
 float64 temperature # Outdoor temperature, in K.
 float64 humidity # Outdoor relative humidity, between 0 and 1.
