@@ -12,6 +12,7 @@ set(msg_files
   "msg/AlertMsg.msg"
   "msg/Boolean.msg"
   "msg/Binning.msg"
+  "msg/CCDMsg.msg"
   "msg/ChopperMsg.msg"
   "msg/Clock.msg"
   "msg/ControlStatus.msg"
