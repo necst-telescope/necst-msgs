@@ -15,15 +15,25 @@ code {
 <p>Interface definition for weather information.</p>
 <h2>Fields</h2>
 <ul>
-<li><strong>temperature</strong> (<code>float64</code>) --  Temperature, in K.</li>
 <li><strong>pressure</strong> (<code>float64</code>) --  Atmospheric pressure, in hPa.</li>
-<li><strong>humidity</strong> (<code>float64</code>) --  Relative humidity, between 0 and 1.</li>
+<li><strong>temperature</strong> (<code>float64</code>) --  Outdoor temperature, in K.</li>
+<li><strong>humidity</strong> (<code>float64</code>) --  Outdoor relative humidity, between 0 and 1.</li>
+<li><strong>in_temperature</strong> (<code>float64</code>) --  Indoor temperature, in K.</li>
+<li><strong>in_humidity</strong> (<code>float64</code>) --  Indooor relative humidity, between 0 and 1.</li>
+<li><strong>wind_speed</strong> (<code>float64</code>) --  Windspeed, in m/sec.</li>
+<li><strong>wind_direction</strong> (<code>float64</code>) --  WindDirection, in digrees between 0 and 360.</li>
+<li><strong>rain_rate</strong> (<code>float64</code>) --  Rainrate</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the data were taken at.</li>
 </ul>
 <h2>Raw definitions</h2>
-<pre class="codehilite"><code class="language-plaintext">float64 temperature
-float64 pressure
+<pre class="codehilite"><code class="language-plaintext">float64 pressure
+float64 temperature
 float64 humidity
+float64 in_temperature
+float64 in_humidity
+float64 wind_speed
+float64 wind_direction
+float64 rain_rate
 float64 time
 </code></pre>
 
