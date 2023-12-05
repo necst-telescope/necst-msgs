@@ -12,7 +12,6 @@ set(msg_files
   "msg/AlertMsg.msg"
   "msg/Boolean.msg"
   "msg/Binning.msg"
-  "msg/CCDMsg.msg"
   "msg/ChopperMsg.msg"
   "msg/Clock.msg"
   "msg/ControlStatus.msg"
@@ -37,6 +36,7 @@ set(srv_files
   "srv/File.srv"
   "srv/ObservationMode.srv"
   "srv/RecordSrv.srv"
+  "srv/CCDCommand.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
