@@ -1,4 +1,4 @@
-<p><title>necst_msgs.msg.CCDMsg Reference</title><style>
+<p><title>necst_msgs.srv.CCDCommand Reference</title><style>
 body {
     padding: 7px;
 }
@@ -11,19 +11,23 @@ code {
     color: #A1F;
 }
 </style></p>
-<h1><code>necst_msgs.msg.CCDMsg</code></h1>
+<h1><code>necst_msgs.srv.CCDCommand</code></h1>
 <h2>Fields</h2>
 <ul>
 <li><strong>capture</strong> (<code>bool</code>) --  If <code>True</code>, the camera is capturing photos.</li>
 <li><strong>savepath</strong> (<code>string</code>) --  Save path of photo.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Timestamp.</li>
 <li><strong>id</strong> (<code>string</code>) --  Device identifier.</li>
+<li>--</li>
+<li><strong>captured</strong> (<code>bool</code>) --  If <code>True</code>, the camera finished capture photos.   </li>
 </ul>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">bool capture
 string savepath
 float64 time
 string id
+---
+bool captured
 </code></pre>
 
 <hr />
