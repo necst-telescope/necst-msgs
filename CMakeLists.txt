@@ -18,6 +18,7 @@ set(msg_files
   "msg/CoordMsg.msg"
   "msg/DeviceReading.msg"
   "msg/HEMTBias.msg"
+  "msg/LocalAttenuator.msg"
   "msg/LocalSignal.msg"
   "msg/ObservingMode.msg"
   "msg/PIDMsg.msg"
