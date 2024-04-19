@@ -14,16 +14,16 @@ code {
 <h1><code>necst_msgs.msg.LocalAttenuatorMsg</code></h1>
 <h2>Fields</h2>
 <ul>
-<li><strong>ch</strong> (<code>int32</code>) --  channel number.</li>
-<li><strong>outputrange</strong> (<code>string</code>) --  Output current range.</li>
+<li><strong>id</strong> (<code>string</code>) --  channel id.</li>
 <li><strong>current</strong> (<code>float64</code>) --  Current to output.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Timestamp.</li>
+<li><strong>finalize</strong> (<code>bool</code>) --  Whether to finalize.</li>
 </ul>
 <h2>Raw definitions</h2>
-<pre class="codehilite"><code class="language-plaintext">int32 ch
-string outputrange
+<pre class="codehilite"><code class="language-plaintext">string id
 float64 current
 float64 time
+bool finalize
 </code></pre>
 
 <hr />
