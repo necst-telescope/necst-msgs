@@ -1,4 +1,4 @@
 # Data type for antenna sync
-bool antenna_sync
+bool dome_sync
 ---
 bool check
