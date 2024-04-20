@@ -1,0 +1,4 @@
+# Data type for antenna sync
+bool antenna_sync
+---
+bool check
