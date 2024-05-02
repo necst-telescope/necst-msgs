@@ -29,6 +29,7 @@ set(msg_files
   "msg/TimedFloat64.msg"
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
+  "msg/CalcLog.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
