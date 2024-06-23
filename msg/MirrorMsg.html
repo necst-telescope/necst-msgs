@@ -15,7 +15,7 @@ code {
 <p>Data type for mirror control commands.</p>
 <h2>Fields</h2>
 <ul>
-<li><strong>in</strong> (<code>bool</code>) --  If <code>True</code>, position of mirror is "IN".</li>
+<li><strong>position</strong> (<code>string</code>) --  Position of mirror.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the command was sent.</li>
 </ul>
 <h2>Notes</h2>
@@ -23,13 +23,13 @@ code {
 <blockquote>
 <blockquote>
 <blockquote>
-<p>msg = MirrorMsg(in=True, time=time.time())
+<p>msg = MirrorMsg(position="IN", time=time.time())
 publisher.publish(msg)</p>
 </blockquote>
 </blockquote>
 </blockquote>
 <h2>Raw definitions</h2>
-<pre class="codehilite"><code class="language-plaintext">bool in
+<pre class="codehilite"><code class="language-plaintext">string position
 float64 time
 </code></pre>
 
