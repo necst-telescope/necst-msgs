@@ -20,6 +20,7 @@ set(msg_files
   "msg/HEMTBias.msg"
   "msg/LocalAttenuatorMsg.msg"
   "msg/LocalSignal.msg"
+  "msg/MirrorMsg.msg"
   "msg/ObservingMode.msg"
   "msg/PIDMsg.msg"
   "msg/Sampling.msg"
