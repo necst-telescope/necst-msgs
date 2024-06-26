@@ -2,7 +2,7 @@
 
 string position  # Position of M4.
 float64 distance  # Move distance of M2.
-list status  # Position of M2.
+int[] status  # Position of M2.
 float64 time  # Time the command was sent.
 
 # Examples
