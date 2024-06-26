@@ -15,7 +15,9 @@ code {
 <p>Data type for mirror control commands.</p>
 <h2>Fields</h2>
 <ul>
-<li><strong>position</strong> (<code>string</code>) --  Position of mirror.</li>
+<li><strong>position</strong> (<code>string</code>) --  Position of M4.</li>
+<li><strong>distance</strong> (<code>float64</code>) --  Move distance of M2.</li>
+<li><strong>status</strong> (<code>list</code>) --  Position of M2.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the command was sent.</li>
 </ul>
 <h2>Notes</h2>
@@ -30,6 +32,8 @@ publisher.publish(msg)</p>
 </blockquote>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">string position
+float64 distance
+list status
 float64 time
 </code></pre>
 
