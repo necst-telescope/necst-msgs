@@ -38,6 +38,7 @@ set(srv_files
   "srv/ObservationMode.srv"
   "srv/RecordSrv.srv"
   "srv/CCDCommand.srv"
+  "srv/ComDelaySrv.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
