@@ -30,6 +30,7 @@ set(msg_files
   "msg/TimedFloat64.msg"
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
+  "msg/TimeOnly.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
@@ -38,6 +39,7 @@ set(srv_files
   "srv/ObservationMode.srv"
   "srv/RecordSrv.srv"
   "srv/CCDCommand.srv"
+  "srv/ComDelaySrv.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
