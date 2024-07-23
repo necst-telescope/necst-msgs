@@ -30,6 +30,7 @@ set(msg_files
   "msg/TimedFloat64.msg"
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
+  "msg/DomeCommand.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
