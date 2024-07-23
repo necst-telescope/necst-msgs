@@ -1,4 +1,4 @@
 string turn
 string speed
 bool stop
-float time
+float64 time
