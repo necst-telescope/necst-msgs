@@ -1,2 +1,2 @@
-str turn
-str speed
+string turn
+string speed
