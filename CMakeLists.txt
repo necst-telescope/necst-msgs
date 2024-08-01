@@ -20,6 +20,8 @@ set(msg_files
   "msg/HEMTBias.msg"
   "msg/LocalAttenuatorMsg.msg"
   "msg/LocalSignal.msg"
+  "msg/MembraneMsg.msg"
+  "msg/MirrorMsg.msg"
   "msg/ObservingMode.msg"
   "msg/PIDMsg.msg"
   "msg/Sampling.msg"
@@ -32,6 +34,7 @@ set(msg_files
   "msg/WeatherMsg.msg"
   "msg/DomeCommand.msg"
   "msg/DomeStatus.msg"
+  "msg/TimeOnly.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
@@ -42,6 +45,7 @@ set(srv_files
   "srv/CCDCommand.srv"
   "srv/DomeSync.srv"
   "srv/DomeOC.srv"
+  "srv/ComDelaySrv.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
