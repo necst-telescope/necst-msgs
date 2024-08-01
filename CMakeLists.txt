@@ -31,6 +31,7 @@ set(msg_files
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
   "msg/DomeCommand.msg"
+  "msg/DomeStatus.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
@@ -40,6 +41,7 @@ set(srv_files
   "srv/RecordSrv.srv"
   "srv/CCDCommand.srv"
   "srv/DomeSync.srv"
+  "srv/DomeOC.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
