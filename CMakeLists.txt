@@ -32,6 +32,8 @@ set(msg_files
   "msg/TimedFloat64.msg"
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
+  "msg/DomeCommand.msg"
+  "msg/DomeStatus.msg"
   "msg/TimeOnly.msg"
 )
 set(srv_files
@@ -41,6 +43,8 @@ set(srv_files
   "srv/ObservationMode.srv"
   "srv/RecordSrv.srv"
   "srv/CCDCommand.srv"
+  "srv/DomeSync.srv"
+  "srv/DomeOC.srv"
   "srv/ComDelaySrv.srv"
 )
 

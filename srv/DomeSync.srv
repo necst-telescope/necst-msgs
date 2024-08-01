@@ -1,0 +1,4 @@
+# Data type for antenna sync
+bool dome_sync
+---
+bool check
