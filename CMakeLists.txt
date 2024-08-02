@@ -46,6 +46,7 @@ set(srv_files
   "srv/DomeSync.srv"
   "srv/DomeOC.srv"
   "srv/ComDelaySrv.srv"
+  "srv/DomeLimit.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
