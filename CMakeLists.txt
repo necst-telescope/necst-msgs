@@ -34,6 +34,7 @@ set(msg_files
   "msg/WeatherMsg.msg"
   "msg/DomeCommand.msg"
   "msg/DomeStatus.msg"
+  "msg/DomeOC.msg"
   "msg/TimeOnly.msg"
 )
 set(srv_files
@@ -44,7 +45,6 @@ set(srv_files
   "srv/RecordSrv.srv"
   "srv/CCDCommand.srv"
   "srv/DomeSync.srv"
-  "srv/DomeOC.srv"
   "srv/ComDelaySrv.srv"
   "srv/DomeLimit.srv"
 )
