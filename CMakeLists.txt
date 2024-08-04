@@ -32,6 +32,7 @@ set(msg_files
   "msg/TimedFloat64.msg"
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
+  "msg/CalcLog.msg"
   "msg/DomeCommand.msg"
   "msg/DomeStatus.msg"
   "msg/TimeOnly.msg"
