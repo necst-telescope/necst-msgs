@@ -16,6 +16,7 @@ code {
 <h2>Fields</h2>
 <ul>
 <li><strong>open</strong> (<code>bool</code>) --  If <code>True</code>, the membrane open.</li>
+<li><strong>move</strong> (<code>bool</code>) --  If <code>True</code>, the membrane is moving.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the command was sent.</li>
 </ul>
 <h2>Notes</h2>
@@ -23,13 +24,14 @@ code {
 <blockquote>
 <blockquote>
 <blockquote>
-<p>msg = MembraneMsg(open=True, time=time.time())
+<p>msg = MembraneMsg(open=True, move=False, time=time.time())
 publisher.publish(msg)</p>
 </blockquote>
 </blockquote>
 </blockquote>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">bool open
+bool move
 float64 time
 </code></pre>
 
