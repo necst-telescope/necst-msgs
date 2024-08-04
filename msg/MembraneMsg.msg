@@ -6,5 +6,5 @@ float64 time  # Time the command was sent.
 
 # Examples
 # --------
-# >>> msg = MembraneMsg(open=True, time=time.time())
+# >>> msg = MembraneMsg(open=True, move=False, time=time.time())
 # >>> publisher.publish(msg)
