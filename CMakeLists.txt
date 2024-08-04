@@ -17,6 +17,7 @@ set(msg_files
   "msg/ControlStatus.msg"
   "msg/CoordMsg.msg"
   "msg/DeviceReading.msg"
+  "msg/DriveMsg.msg"
   "msg/HEMTBias.msg"
   "msg/LocalAttenuatorMsg.msg"
   "msg/LocalSignal.msg"
