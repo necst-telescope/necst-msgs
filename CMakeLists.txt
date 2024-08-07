@@ -17,6 +17,10 @@ set(msg_files
   "msg/ControlStatus.msg"
   "msg/CoordMsg.msg"
   "msg/DeviceReading.msg"
+  "msg/DomeCommand.msg"
+  "msg/DomeLimit.msg"
+  "msg/DomeOC.msg"
+  "msg/DomeStatus.msg"
   "msg/DriveMsg.msg"
   "msg/HEMTBias.msg"
   "msg/LocalAttenuatorMsg.msg"
@@ -34,21 +38,18 @@ set(msg_files
   "msg/TrackingStatus.msg"
   "msg/WeatherMsg.msg"
   "msg/CalcLog.msg"
-  "msg/DomeCommand.msg"
-  "msg/DomeStatus.msg"
-  "msg/DomeOC.msg"
   "msg/TimeOnly.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
+
+  "srv/CCDCommand.srv"
+  "srv/ComDelaySrv.srv"
   "srv/CoordinateCommand.srv"
+  "srv/DomeSync.srv"
   "srv/File.srv"
   "srv/ObservationMode.srv"
   "srv/RecordSrv.srv"
-  "srv/CCDCommand.srv"
-  "srv/DomeSync.srv"
-  "srv/ComDelaySrv.srv"
-  "srv/DomeLimit.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
