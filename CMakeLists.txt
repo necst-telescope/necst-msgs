@@ -29,6 +29,7 @@ set(msg_files
   "msg/MirrorMsg.msg"
   "msg/ObservingMode.msg"
   "msg/PIDMsg.msg"
+  "msg/RecordMsg.msg"
   "msg/Sampling.msg"
   "msg/SISBias.msg"
   "msg/Spectral.msg"
@@ -49,7 +50,6 @@ set(srv_files
   "srv/DomeSync.srv"
   "srv/File.srv"
   "srv/ObservationMode.srv"
-  "srv/RecordSrv.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
