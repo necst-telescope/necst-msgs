@@ -40,6 +40,7 @@ set(msg_files
   "msg/WeatherMsg.msg"
   "msg/CalcLog.msg"
   "msg/TimeOnly.msg"
+  "msg/TPModeMsg.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
