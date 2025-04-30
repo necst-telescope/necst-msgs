@@ -16,7 +16,7 @@ code {
 <h2>Fields</h2>
 <ul>
 <li><strong>insert</strong> (<code>bool</code>) --  If <code>True</code>, the absorber will cover the feed horn.</li>
-<li><strong>position</strong> (<code>int</code>) --  Motoric position of the chopper, especially useful to control some slider-type motors</li>
+<li><strong>position</strong> (<code>int64</code>) --  Motoric position of the chopper, especially useful to control some slider-type motors</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the command was sent.</li>
 </ul>
 <h2>Notes</h2>
@@ -31,7 +31,7 @@ publisher.publish(msg)</p>
 </blockquote>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">bool insert
-int position
+int64 position
 float64 time
 </code></pre>
 
