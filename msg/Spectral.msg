@@ -4,6 +4,7 @@ float32[] data        # The spectral data.
 string<=8 position    # Observing position, such as ON, OFF, HOT, etc., up to 8 characters.
 string<=16 id         # Specific ID for current data, up to 16 characters.
 float64 time          # Time the data is taken on.
+string<=32 time_spectrometer # Time the data is taken from spectrometer, up to 32 characters.
 int32[<=2] ch         # Stream range specification in spectrometer channel.
 float64[<=2] rfreq    # Stream range specification in radio frequency.
 float64[<=2] ifreq    # Stream range specification in intermediate frequency.
