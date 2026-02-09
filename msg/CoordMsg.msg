@@ -4,8 +4,8 @@
 
 float64 lon   # Longitude in floating point value. Hour angle won't be accepted.
 float64 lat   # Latitude.
-float64 dlon   # dAz from pointing model
-float64 dlat   # dEl from pointing model
+float64 dlon   # dAz from pointing model.
+float64 dlat   # dEl from pointing model.
 string unit   # Angular unit in which the longitude and latitude are given.
 string frame  # Coordinate frame in which the longitude and latitude are given.
 float64 time  # Time the instructed coordinate is valid at, considering sidereal motion.
