@@ -19,8 +19,8 @@ and name query (name, time).</p>
 <ul>
 <li><strong>lon</strong> (<code>float64</code>) --  Longitude in floating point value. Hour angle won't be accepted.</li>
 <li><strong>lat</strong> (<code>float64</code>) --  Latitude.</li>
-<li><strong>dAz</strong> (<code>float64</code>) --  dAz from pointing model</li>
-<li><strong>dEl</strong> (<code>float64</code>) --  dEl from pointing model</li>
+<li><strong>dlon</strong> (<code>float64</code>) --  dAz from pointing model.</li>
+<li><strong>dlat</strong> (<code>float64</code>) --  dEl from pointing model.</li>
 <li><strong>unit</strong> (<code>string</code>) --  Angular unit in which the longitude and latitude are given.</li>
 <li><strong>frame</strong> (<code>string</code>) --  Coordinate frame in which the longitude and latitude are given.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the instructed coordinate is valid at, considering sidereal motion.</li>
@@ -37,8 +37,8 @@ and name query (name, time).</p>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">float64 lon
 float64 lat
-float64 dAz
-float64 dEl
+float64 dlon
+float64 dlat
 string unit
 string frame
 float64 time
