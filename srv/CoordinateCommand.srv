@@ -6,6 +6,7 @@ string frame       # Coordinate frame in which the longitude and latitude are gi
 float64[<=2] offset_lon
 float64[<=2] offset_lat
 string offset_frame
+bool cos_correction  # If true, apply 1/cos(lat) correction to offset_lon in offset_frame.
 string unit        # Angular unit in which the longitude and latitude are given.
 float64[] time     # Time the instructed coordinate si valid at, considering sidereal motion.
 string name        # Name of celestial body.
@@ -13,4 +14,4 @@ float64 speed      # Speed at which provided coordinate is scanned through.
 float64 margin     # Scan margin.
 bool direct_mode   # if "true", skip pointing error and atomsphere convirsion.
 ---
-string<=64 id      # Identifier of the control section.  
+string<=64 id      # Identifier of the control section.
