@@ -28,6 +28,7 @@ code {
 <li><strong>speed</strong> (<code>float64</code>) --  Speed at which provided coordinate is scanned through.</li>
 <li><strong>margin</strong> (<code>float64</code>) --  Scan margin.</li>
 <li><strong>direct_mode</strong> (<code>bool</code>) --  if "true", skip pointing error and atomsphere convirsion.</li>
+<li><strong>obsfreq</strong> (<code>float64</code>) --  Observation frequency in GHz. 0.0 means "use config default".</li>
 <li>--</li>
 <li><strong>id</strong> (<code>string&lt;=64</code>) --  Identifier of the control section.</li>
 </ul>
@@ -45,6 +46,7 @@ string name
 float64 speed
 float64 margin
 bool direct_mode
+float64 obsfreq
 ---
 string&lt;=64 id
 </code></pre>
