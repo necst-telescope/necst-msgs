@@ -13,5 +13,6 @@ string name        # Name of celestial body.
 float64 speed      # Speed at which provided coordinate is scanned through.
 float64 margin     # Scan margin.
 bool direct_mode   # if "true", skip pointing error and atomsphere convirsion.
+float64 obsfreq    # Observation frequency in GHz. 0.0 means "use config default".
 ---
 string<=64 id      # Identifier of the control section.
