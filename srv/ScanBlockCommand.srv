@@ -1,0 +1,34 @@
+# Request a continuous scan block composed of multiple control sections.
+#
+# Shared target/reference context:
+# - Use ``name`` for a named moving/trackable target.
+# - Otherwise use ``lon`` / ``lat`` / ``frame`` for the block reference.
+# - ``offset_lon`` / ``offset_lat`` / ``offset_frame`` are block-wide offsets
+#   applied after the target/reference is realized.
+#
+# Shared numerical context:
+# - ``unit`` is the angular unit for all section coordinates and speeds.
+# - ``cos_correction`` has the same semantics as in ``CoordinateCommand``.
+# - ``direct_mode`` and ``obsfreq`` are forwarded to the control-side
+#   coordinate conversion path in the same way as existing point/scan commands.
+#
+# Section list:
+# - ``sections`` is an ordered array. The control side executes them as one
+#   execution id.
+# - Section geometry is defined semantically; actual section start timestamps
+#   are owned by the control side, not by this request.
+
+float64[<=1] lon         # Reference longitude, if not using ``name``.
+float64[<=1] lat         # Reference latitude, if not using ``name``.
+string frame             # Reference frame for ``lon`` / ``lat``.
+float64[<=2] offset_lon  # Block-wide longitude offset.
+float64[<=2] offset_lat  # Block-wide latitude offset.
+string offset_frame      # Frame of block-wide offsets.
+bool cos_correction      # Apply 1/cos(lat) correction to longitude offsets.
+string unit              # Angular unit used by all sections.
+string name              # Named target. Empty string if not used.
+bool direct_mode         # Skip pointing error / atmosphere conversion if true.
+float64 obsfreq          # Observation frequency [GHz]. 0.0 => use config default.
+ScanBlockSection[] sections
+---
+string<=64 id            # Identifier of the accepted control execution.
