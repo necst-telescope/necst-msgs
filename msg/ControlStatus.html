@@ -21,6 +21,9 @@ code {
 <li><strong>id</strong> (<code>string&lt;=64</code>) --  Control section identifier.</li>
 <li><strong>interrupt_ok</strong> (<code>bool</code>) --  If <code>true</code>, this section isn't followed by bound tight control.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Timestamp of this status</li>
+<li><strong>section_kind</strong> (<code>string&lt;=64</code>) --  Fine section kind within a block, e.g. line/turn</li>
+<li><strong>section_label</strong> (<code>string&lt;=64</code>) --  Fine section label; for line sections this may be line ID</li>
+<li><strong>line_index</strong> (<code>int32</code>) --  Fine line index inside a scan block, or -1 if N/A</li>
 </ul>
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">bool controlled
@@ -29,6 +32,9 @@ bool remote
 string&lt;=64 id
 bool interrupt_ok
 float64 time
+string&lt;=64 section_kind
+string&lt;=64 section_label
+int32 line_index
 </code></pre>
 
 <hr />
