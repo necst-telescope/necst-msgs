@@ -11,9 +11,11 @@
 # frame. Their meaning depends on ``kind``:
 # - LINE: start and stop of the constant-speed data-taking segment.
 # - ACCELERATE / DECELERATE: start and stop of the ramp segment.
-# - TURN: entry and exit point of the turn segment.
-# - FIRST_STANDBY / FINAL_STANDBY / MOVE_TO_ENTRY: holding point. In these
-#   cases ``start`` and ``stop`` should usually be identical.
+# - TURN / HANDOFF_TURN: entry and exit point of the turn segment. The latter
+#   is a conservative rest-to-rest handoff to the next entry.
+# - FIRST_STANDBY / FINAL_STANDBY / HANDOFF_STANDBY / MOVE_TO_ENTRY: holding
+#   or standby point. In these cases ``start`` and ``stop`` should usually be
+#   identical, except HANDOFF_STANDBY which preserves the next-line geometry.
 #
 # ``tight`` is the intended recording gate for this section. Initial design:
 # only LINE sections use tight=true.
@@ -25,6 +27,8 @@ uint8 LINE=3
 uint8 TURN=4
 uint8 DECELERATE=5
 uint8 FINAL_STANDBY=6
+uint8 HANDOFF_TURN=7
+uint8 HANDOFF_STANDBY=8
 
 uint8 kind               # Section kind. Use one of the constants above.
 bool tight               # Intended recording gate for this section.
