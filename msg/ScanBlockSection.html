@@ -22,11 +22,9 @@ provides the relative path piece to execute.</p>
 frame. Their meaning depends on <code>kind</code>:
 - LINE: start and stop of the constant-speed data-taking segment.
 - ACCELERATE / DECELERATE: start and stop of the ramp segment.
-- TURN / HANDOFF_TURN: entry and exit point of the turn segment. The latter
-is a conservative rest-to-rest handoff to the next entry.
-- FIRST_STANDBY / FINAL_STANDBY / HANDOFF_STANDBY / MOVE_TO_ENTRY: holding
-or standby point. In these cases <code>start</code> and <code>stop</code> should usually be
-identical, except HANDOFF_STANDBY which preserves the next-line geometry.</p>
+- TURN: entry and exit point of the turn segment.
+- FIRST_STANDBY / FINAL_STANDBY / MOVE_TO_ENTRY: holding point. In these
+cases <code>start</code> and <code>stop</code> should usually be identical.</p>
 <p><code>tight</code> is the intended recording gate for this section. Initial design:
 only LINE sections use tight=true.</p>
 <h2>Fields</h2>
@@ -38,8 +36,6 @@ only LINE sections use tight=true.</p>
 <li><strong>TURN</strong> (<code>uint8</code>) -- =4</li>
 <li><strong>DECELERATE</strong> (<code>uint8</code>) -- =5</li>
 <li><strong>FINAL_STANDBY</strong> (<code>uint8</code>) -- =6</li>
-<li><strong>HANDOFF_TURN</strong> (<code>uint8</code>) -- =7</li>
-<li><strong>HANDOFF_STANDBY</strong> (<code>uint8</code>) -- =8</li>
 <li><strong>kind</strong> (<code>uint8</code>) --  Section kind. Use one of the constants above.</li>
 <li><strong>tight</strong> (<code>bool</code>) --  Intended recording gate for this section.</li>
 <li><strong>label</strong> (<code>string&lt;=64</code>) --  Optional human-readable label, e.g. "line-01".</li>
@@ -60,8 +56,6 @@ uint8 LINE
 uint8 TURN
 uint8 DECELERATE
 uint8 FINAL_STANDBY
-uint8 HANDOFF_TURN
-uint8 HANDOFF_STANDBY
 uint8 kind
 bool tight
 string&lt;=64 label
