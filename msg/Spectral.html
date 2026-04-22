@@ -17,7 +17,9 @@ code {
 <ul>
 <li><strong>data</strong> (<code>float32[]</code>) --  The spectral data.</li>
 <li><strong>position</strong> (<code>string&lt;=8</code>) --  Observing position, such as ON, OFF, HOT, etc., up to 8 characters.</li>
-<li><strong>id</strong> (<code>string&lt;=16</code>) --  Specific ID for current data, up to 16 characters.</li>
+<li><strong>id</strong> (<code>string&lt;=16</code>) --  Coarse block / integration ID, up to 16 characters.</li>
+<li><strong>line_index</strong> (<code>int32</code>) --  Fine line index inside a scan block, or -1 if N/A.</li>
+<li><strong>line_label</strong> (<code>string&lt;=64</code>) --  Human-readable fine line label, empty if N/A.</li>
 <li><strong>time</strong> (<code>float64</code>) --  Time the data is taken on.</li>
 <li><strong>time_spectrometer</strong> (<code>string&lt;=32</code>) --  Time the data is taken from spectrometer, up to 32 characters.</li>
 <li><strong>ch</strong> (<code>int32[&lt;=2]</code>) --  Stream range specification in spectrometer channel.</li>
@@ -26,17 +28,12 @@ code {
 <li><strong>vlsr</strong> (<code>float64[&lt;=2]</code>) --  Stream range specification in local standard of rest velocity.</li>
 <li><strong>integ</strong> (<code>float64</code>) --  Integration time.</li>
 </ul>
-<h2>Example</h2>
-<pre class="codehilite"><code class="language-python">&gt;&gt;&gt; from necst_msgs.msg import Spectral
-&gt;&gt;&gt; msg = Spectral(
-...     data=[1., 2., 3.], position=&quot;SKY&quot;, id=&quot;skydip_el=30&quot; , time=1664792192.3645709
-... )
-</code></pre>
-
 <h2>Raw definitions</h2>
 <pre class="codehilite"><code class="language-plaintext">float32[] data
 string&lt;=8 position
 string&lt;=16 id
+int32 line_index
+string&lt;=64 line_label
 float64 time
 string&lt;=32 time_spectrometer
 int32[&lt;=2] ch
