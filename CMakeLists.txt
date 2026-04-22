@@ -41,6 +41,7 @@ set(msg_files
   "msg/CalcLog.msg"
   "msg/TimeOnly.msg"
   "msg/TPModeMsg.msg"
+  "msg/ScanBlockSection.msg"
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
@@ -51,6 +52,7 @@ set(srv_files
   "srv/DomeSync.srv"
   "srv/File.srv"
   "srv/ObservationMode.srv"
+  "srv/ScanBlockCommand.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
