@@ -1,0 +1,79 @@
+<p><title>necst_msgs.msg.ScanBlockSection Reference</title><style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+code {
+    color: #A1F;
+}
+</style></p>
+<h1><code>necst_msgs.msg.ScanBlockSection</code></h1>
+<p>A single control section in a continuous scan block.</p>
+<p>All angular quantities are interpreted in the section's <code>frame</code> and in the
+<code>unit</code> given by the parent <code>ScanBlockCommand</code> request.</p>
+<p>The section sequence itself encodes the geometric block shape. The service
+request provides the shared target/name/offset context, while each section
+provides the relative path piece to execute.</p>
+<p><code>start</code> and <code>stop</code> are two-component vectors [lon, lat] in the section
+frame. Their meaning depends on <code>kind</code>:
+- LINE: start and stop of the constant-speed data-taking segment.
+- ACCELERATE / DECELERATE: start and stop of the ramp segment.
+- TURN / HANDOFF_TURN: entry and exit point of the turn segment. The latter
+is a conservative rest-to-rest handoff to the next entry.
+- FIRST_STANDBY / FINAL_STANDBY / HANDOFF_STANDBY / MOVE_TO_ENTRY: holding
+or standby point. In these cases <code>start</code> and <code>stop</code> should usually be
+identical, except HANDOFF_STANDBY which preserves the next-line geometry.</p>
+<p><code>tight</code> is the intended recording gate for this section. Initial design:
+only LINE sections use tight=true.</p>
+<h2>Fields</h2>
+<ul>
+<li><strong>MOVE_TO_ENTRY</strong> (<code>uint8</code>) -- =0</li>
+<li><strong>FIRST_STANDBY</strong> (<code>uint8</code>) -- =1</li>
+<li><strong>ACCELERATE</strong> (<code>uint8</code>) -- =2</li>
+<li><strong>LINE</strong> (<code>uint8</code>) -- =3</li>
+<li><strong>TURN</strong> (<code>uint8</code>) -- =4</li>
+<li><strong>DECELERATE</strong> (<code>uint8</code>) -- =5</li>
+<li><strong>FINAL_STANDBY</strong> (<code>uint8</code>) -- =6</li>
+<li><strong>HANDOFF_TURN</strong> (<code>uint8</code>) -- =7</li>
+<li><strong>HANDOFF_STANDBY</strong> (<code>uint8</code>) -- =8</li>
+<li><strong>kind</strong> (<code>uint8</code>) --  Section kind. Use one of the constants above.</li>
+<li><strong>tight</strong> (<code>bool</code>) --  Intended recording gate for this section.</li>
+<li><strong>label</strong> (<code>string&lt;=64</code>) --  Optional human-readable label, e.g. "line-01".</li>
+<li><strong>line_index</strong> (<code>int32</code>) --  Line number for metadata / logging. -1 if N/A.</li>
+<li><strong>start</strong> (<code>float64[2]</code>) --  [lon, lat] start point in <code>frame</code> / parent <code>unit</code>.</li>
+<li><strong>stop</strong> (<code>float64[2]</code>) --  [lon, lat] stop point in <code>frame</code> / parent <code>unit</code>.</li>
+<li><strong>frame</strong> (<code>string</code>) --  Coordinate frame for start/stop.</li>
+<li><strong>speed</strong> (<code>float64</code>) --  Section speed in parent <code>unit</code>/s. 0 for pure hold.</li>
+<li><strong>margin</strong> (<code>float64</code>) --  Section-local margin in parent <code>unit</code>. 0 if unused.</li>
+<li><strong>duration_hint</strong> (<code>float64</code>) --  Optional hint [s]. 0 means "derive from geometry".</li>
+<li><strong>turn_radius_hint</strong> (<code>float64</code>) --  Optional turn-radius hint in parent <code>unit</code>.</li>
+</ul>
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">uint8 MOVE_TO_ENTRY
+uint8 FIRST_STANDBY
+uint8 ACCELERATE
+uint8 LINE
+uint8 TURN
+uint8 DECELERATE
+uint8 FINAL_STANDBY
+uint8 HANDOFF_TURN
+uint8 HANDOFF_STANDBY
+uint8 kind
+bool tight
+string&lt;=64 label
+int32 line_index
+float64[2] start
+float64[2] stop
+string frame
+float64 speed
+float64 margin
+float64 duration_hint
+float64 turn_radius_hint
+</code></pre>
+
+<hr />
+<p><a href="../index.html">Home</a></p>
