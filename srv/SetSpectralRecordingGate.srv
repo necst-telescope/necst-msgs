@@ -1,0 +1,7 @@
+string setup_id
+string setup_hash
+bool allow_save
+---
+bool success
+string[] warnings
+string[] errors
