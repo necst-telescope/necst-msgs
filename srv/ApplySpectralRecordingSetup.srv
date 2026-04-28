@@ -1,0 +1,15 @@
+string snapshot_toml
+string snapshot_sha256
+string setup_id
+bool strict
+---
+bool success
+string setup_id
+string setup_hash
+string active_mode_summary
+string[] warnings
+string[] errors
+string[] enabled_streams
+string[] disabled_streams
+string[] spectrum_streams
+string[] tp_streams
