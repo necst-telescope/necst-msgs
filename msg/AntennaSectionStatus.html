@@ -1,0 +1,83 @@
+<p><title>necst_msgs.msg.AntennaSectionStatus Reference</title><style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+code {
+    color: #A1F;
+}
+</style></p>
+<h1><code>necst_msgs.msg.AntennaSectionStatus</code></h1>
+<p>High-level antenna control-section status for progress/diagnostics.</p>
+<p>This message is additive. Existing ControlStatus remains the source used by
+legacy metadata gating. This status describes the section that corresponds to
+the current wall-clock/query time, not the farthest future command already
+published to the antenna drive queue.</p>
+<h2>Fields</h2>
+<ul>
+<li><strong>active</strong> (<code>bool</code>) --  True when a current control section is known.</li>
+<li><strong>control_id</strong> (<code>string&lt;=64</code>) --  Execution/control ID associated with this section.</li>
+<li><strong>section_uid</strong> (<code>string&lt;=96</code>) --  Stable section identifier within the execution when available.</li>
+<li><strong>section_plan_index</strong> (<code>int32</code>) --  Planned section index inside a scan block, or -1 if N/A.</li>
+<li><strong>section_sequence_index</strong> (<code>int32</code>) --  Runtime section activation sequence, or -1 if N/A.</li>
+<li><strong>section_kind</strong> (<code>string&lt;=64</code>) --  initial_standby, accelerate, line, decelerate, turn, ...</li>
+<li><strong>section_label</strong> (<code>string&lt;=64</code>) --  Human-readable label, often an ON line label.</li>
+<li><strong>line_index</strong> (<code>int32</code>) --  0-based scan-line index, or -1 if N/A.</li>
+<li><strong>section_start_unix</strong> (<code>float64</code>) --  Section start time [Unix seconds], if known.</li>
+<li><strong>section_stop_unix</strong> (<code>float64</code>) --  Section stop time [Unix seconds], if known.</li>
+<li><strong>section_duration_sec</strong> (<code>float64</code>) --  Section duration [s], if known.</li>
+<li><strong>query_time_unix</strong> (<code>float64</code>) --  Wall-clock time used to select the current section.</li>
+<li><strong>publish_time_unix</strong> (<code>float64</code>) --  Wall-clock time this status was published.</li>
+<li><strong>command_time_unix</strong> (<code>float64</code>) --  Command-time sample used for the status; normally query_time_unix.</li>
+<li><strong>nominal_fraction</strong> (<code>float64</code>) --  Command-time progress in this section, 0..1 when valid.</li>
+<li><strong>fraction_valid</strong> (<code>bool</code>) --  True when nominal_fraction is meaningful.</li>
+<li><strong>tight</strong> (<code>bool</code>) --  Strict/tight control requested for this section.</li>
+<li><strong>science_line</strong> (<code>bool</code>) --  True for science ON line sections.</li>
+<li><strong>interrupt_ok</strong> (<code>bool</code>) --  True when interruption is safe for this section.</li>
+<li><strong>geometry_valid</strong> (<code>bool</code>) --  True when planned section geometry fields are meaningful.</li>
+<li><strong>section_frame</strong> (<code>string&lt;=32</code>) --  Coordinate frame of the planned section geometry.</li>
+<li><strong>section_unit</strong> (<code>string&lt;=16</code>) --  Unit of geometry longitude/latitude values; degrees in v39.</li>
+<li><strong>section_start_lon_deg</strong> (<code>float64</code>) --  Planned start longitude [deg], if geometry_valid.</li>
+<li><strong>section_start_lat_deg</strong> (<code>float64</code>) --  Planned start latitude [deg], if geometry_valid.</li>
+<li><strong>section_stop_lon_deg</strong> (<code>float64</code>) --  Planned stop longitude [deg], if geometry_valid.</li>
+<li><strong>section_stop_lat_deg</strong> (<code>float64</code>) --  Planned stop latitude [deg], if geometry_valid.</li>
+<li><strong>section_speed_deg_per_sec</strong> (<code>float64</code>) --  Planned section speed [deg/s], if known.</li>
+<li><strong>status_basis</strong> (<code>string&lt;=32</code>) --  current-time, horizon, idle, fallback, stale, ...</li>
+</ul>
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">bool active
+string&lt;=64 control_id
+string&lt;=96 section_uid
+int32 section_plan_index
+int32 section_sequence_index
+string&lt;=64 section_kind
+string&lt;=64 section_label
+int32 line_index
+float64 section_start_unix
+float64 section_stop_unix
+float64 section_duration_sec
+float64 query_time_unix
+float64 publish_time_unix
+float64 command_time_unix
+float64 nominal_fraction
+bool fraction_valid
+bool tight
+bool science_line
+bool interrupt_ok
+bool geometry_valid
+string&lt;=32 section_frame
+string&lt;=16 section_unit
+float64 section_start_lon_deg
+float64 section_start_lat_deg
+float64 section_stop_lon_deg
+float64 section_stop_lat_deg
+float64 section_speed_deg_per_sec
+string&lt;=32 status_basis
+</code></pre>
+
+<hr />
+<p><a href="../index.html">Home</a></p>

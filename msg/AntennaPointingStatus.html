@@ -1,0 +1,72 @@
+<p><title>necst_msgs.msg.AntennaPointingStatus Reference</title><style>
+body {
+    padding: 7px;
+}
+pre {
+    background-color: #EFF;
+    border: 3px ridge #777;
+    padding: 10px;
+}
+code {
+    color: #A1F;
+}
+</style></p>
+<h1><code>necst_msgs.msg.AntennaPointingStatus</code></h1>
+<p>Consolidated antenna pointing/tracking status for progress/diagnostics.</p>
+<p>Coordinates are low-level apparent Alt-Az values in degrees. Derived RA/Dec or
+Galactic display coordinates should be calculated by a display/analysis layer
+using neclib/astropy with the timestamps below.</p>
+<h2>Fields</h2>
+<ul>
+<li><strong>valid</strong> (<code>bool</code>) -- </li>
+<li><strong>publish_time_unix</strong> (<code>float64</code>) -- </li>
+<li><strong>command_time_unix</strong> (<code>float64</code>) -- </li>
+<li><strong>encoder_time_unix</strong> (<code>float64</code>) -- </li>
+<li><strong>cmd_az_deg</strong> (<code>float64</code>) -- </li>
+<li><strong>cmd_el_deg</strong> (<code>float64</code>) -- </li>
+<li><strong>enc_az_deg</strong> (<code>float64</code>) -- </li>
+<li><strong>enc_el_deg</strong> (<code>float64</code>) -- </li>
+<li><strong>delta_az_deg</strong> (<code>float64</code>) --  encoder - command, shortest signed Az difference [deg].</li>
+<li><strong>delta_el_deg</strong> (<code>float64</code>) --  encoder - command [deg].</li>
+<li><strong>delta_az_cos_el_deg</strong> (<code>float64</code>) --  delta_az_deg * cos(encoder elevation) [deg].</li>
+<li><strong>tracking_error_deg</strong> (<code>float64</code>) --  sqrt(delta_az_cos_el_deg^2 + delta_el_deg^2).</li>
+<li><strong>tracking_threshold_deg</strong> (<code>float64</code>) -- </li>
+<li><strong>tracking_ok</strong> (<code>bool</code>) -- </li>
+<li><strong>cmd_age_sec</strong> (<code>float64</code>) -- </li>
+<li><strong>enc_age_sec</strong> (<code>float64</code>) -- </li>
+<li><strong>command_stale</strong> (<code>bool</code>) -- </li>
+<li><strong>encoder_stale</strong> (<code>bool</code>) -- </li>
+<li><strong>cmd_az_rate_deg_per_sec</strong> (<code>float64</code>) -- </li>
+<li><strong>cmd_el_rate_deg_per_sec</strong> (<code>float64</code>) -- </li>
+<li><strong>enc_az_rate_deg_per_sec</strong> (<code>float64</code>) -- </li>
+<li><strong>enc_el_rate_deg_per_sec</strong> (<code>float64</code>) -- </li>
+<li><strong>basis</strong> (<code>string&lt;=32</code>) --  interpolated, unavailable, stale-command, stale-encoder, ...</li>
+</ul>
+<h2>Raw definitions</h2>
+<pre class="codehilite"><code class="language-plaintext">bool valid
+float64 publish_time_unix
+float64 command_time_unix
+float64 encoder_time_unix
+float64 cmd_az_deg
+float64 cmd_el_deg
+float64 enc_az_deg
+float64 enc_el_deg
+float64 delta_az_deg
+float64 delta_el_deg
+float64 delta_az_cos_el_deg
+float64 tracking_error_deg
+float64 tracking_threshold_deg
+bool tracking_ok
+float64 cmd_age_sec
+float64 enc_age_sec
+bool command_stale
+bool encoder_stale
+float64 cmd_az_rate_deg_per_sec
+float64 cmd_el_rate_deg_per_sec
+float64 enc_az_rate_deg_per_sec
+float64 enc_el_rate_deg_per_sec
+string&lt;=32 basis
+</code></pre>
+
+<hr />
+<p><a href="../index.html">Home</a></p>
