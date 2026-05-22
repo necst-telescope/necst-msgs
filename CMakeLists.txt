@@ -45,6 +45,8 @@ set(msg_files
 )
 set(srv_files
   "srv/AuthoritySrv.srv"
+  "srv/ApplySpectralRecordingSetup.srv"
+  "srv/ClearSpectralRecordingSetup.srv"
 
   "srv/CCDCommand.srv"
   "srv/ComDelaySrv.srv"
@@ -53,6 +55,7 @@ set(srv_files
   "srv/File.srv"
   "srv/ObservationMode.srv"
   "srv/ScanBlockCommand.srv"
+  "srv/SetSpectralRecordingGate.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
