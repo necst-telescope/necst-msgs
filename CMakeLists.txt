@@ -12,6 +12,7 @@ set(msg_files
   "msg/SpectrometerStatus.msg"
   "msg/AntennaCommandQueueStatus.msg"
   "msg/AntennaPointingStatus.msg"
+  "msg/AntennaAzUnwrapStatus.msg"
   "msg/AntennaSectionStatus.msg"
   "msg/AlertMsg.msg"
   "msg/Boolean.msg"
