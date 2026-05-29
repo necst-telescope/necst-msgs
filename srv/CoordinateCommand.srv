@@ -13,6 +13,7 @@ string name        # Name of celestial body.
 float64 speed      # Speed at which provided coordinate is scanned through.
 float64 margin     # Scan margin.
 bool direct_mode   # if "true", skip pointing error and atomsphere convirsion.
+string az_target_mode  # "auto", "sky", or "mount". auto keeps observation commands as sky and raw direct AltAz point commands as mount.
 float64 obsfreq    # Observation frequency in GHz. 0.0 means "use config default".
 ---
 string<=64 id      # Identifier of the control section.

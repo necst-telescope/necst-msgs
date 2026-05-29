@@ -9,6 +9,11 @@ find_package(ament_cmake REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
+  "msg/SpectrometerStatus.msg"
+  "msg/AntennaCommandQueueStatus.msg"
+  "msg/AntennaPointingStatus.msg"
+  "msg/AntennaAzUnwrapStatus.msg"
+  "msg/AntennaSectionStatus.msg"
   "msg/AlertMsg.msg"
   "msg/Boolean.msg"
   "msg/Binning.msg"
