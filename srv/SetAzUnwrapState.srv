@@ -1,0 +1,24 @@
+# Request encoder_readout to initialize the Az absolute-encoder unwrap state.
+# The service is intentionally served by the encoder node so the JSON state is
+# written to the state_path that the encoder node actually reads.
+
+bool use_raw_az
+float64 raw_az_deg
+bool use_continuous_az
+float64 continuous_az_deg
+bool use_branch
+int32 branch
+---
+bool success
+string state
+string reason
+string state_path
+bool enabled
+bool valid
+float64 raw_az_deg
+float64 modulo_az_deg
+float64 continuous_az_deg
+int32 branch
+float64 period_deg
+float64 drive_min_deg
+float64 drive_max_deg
