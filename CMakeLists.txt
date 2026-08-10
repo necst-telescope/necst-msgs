@@ -61,6 +61,8 @@ set(srv_files
   "srv/ObservationMode.srv"
   "srv/ScanBlockCommand.srv"
   "srv/SetSpectralRecordingGate.srv"
+  "srv/GetAzUnwrapState.srv"
+  "srv/SetAzUnwrapState.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

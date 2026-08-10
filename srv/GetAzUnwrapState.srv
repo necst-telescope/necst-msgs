@@ -1,0 +1,19 @@
+# Return Az absolute-encoder unwrap runtime state from encoder_readout.
+# This avoids reading a local ~/.necst file on the wrong PC/container.
+
+---
+bool success
+string state
+string reason
+string state_path
+bool enabled
+bool valid
+float64 raw_az_deg
+float64 modulo_az_deg
+float64 continuous_az_deg
+int32 branch
+float64 period_deg
+float64 drive_min_deg
+float64 drive_max_deg
+float64 state_age_sec
+float64 persist_age_sec
